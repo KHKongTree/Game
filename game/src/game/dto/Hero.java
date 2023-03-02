@@ -23,6 +23,11 @@ public class Hero {
 	}
 
 
+	public Hero(String userId2, String userPw2) {
+		this.userId = userId2;
+		this.userPw = userPw2;
+	}
+
 	public int getHp() {
 		return hp;
 	}
@@ -68,7 +73,7 @@ public class Hero {
 	}
 
 	public String toString() {
-		return String.format("%s / %s / %s", userId, userPw, userName);
+		return String.format("%s / %s / %s", userId, userPw);
 		
 	}
 }

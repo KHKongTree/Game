@@ -51,10 +51,8 @@ public class GameView {
     	System.out.print("Pw 확인 : ");
     	String userPwConfirm = sc.next();
     	
-    	System.out.print("나무 이름 : ");
-    	String userName = sc.next();
     	
-    	signUpUser = GameService.signUp(userId, userPw, userPwConfirm, userName);
+    	signUpUser = GameService.signUp(userId, userPw, userPwConfirm);
     	
     	if(signUpUser != null) {
     		
@@ -86,7 +84,7 @@ public class GameView {
 		
 		
 		if(GameView.loginUser !=null) {
-			System.out.println(GameView.loginUser.getUserName() + "님 환영합니다. ");
+			System.out.println("환영합니다.");
 			
 		} else {
 			System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
