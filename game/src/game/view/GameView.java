@@ -18,10 +18,12 @@ public class GameView {
     public void Menu() {
     	
        int input = 0;
+       System.out.println("[♣Kong Tree♣]\n잭에겐 어머니의 유품인 씨앗 하나가 있었고,\n심자마자 잭의 키를 넘길 만큼 커져버렸다.\n소문을 들은 마을 사람들은 이 나무를 탐내게 되는데....\n");
        
        do {
     	   System.out.println("1. 회원가입");
     	   System.out.println("2. 로그인");
+    	   System.out.println("0. 프로그램 종료");
     	   
     	   System.out.print("메뉴 선택 : ");
     	   input = sc.nextInt();
@@ -30,16 +32,27 @@ public class GameView {
     	   
     	   switch(input) {
     	   case 1 : this.signUp(); break;
-    	   case 2 : this.login(); break;
+    	   case 2 : this.login(); 
+    	   			if(service.isLoginCheck()) {
+    	   				menu2();
+    	   			}
+    	   			break;
+    	   case 0 : System.out.println("프로그램을 종료합니다."); break;
     	   default : System.out.println("잘못 입력 하셨습니다.");
     	   
     	   
     	   }
     	   System.out.println();
         } while (input != 0);
-    }
+
+	}
     
-    private void signUp() {
+    private void menu2() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void signUp() {
     	System.out.println("--- 회원 가입 ---");
     	
     	System.out.print("ID : ");
