@@ -5,12 +5,9 @@ import java.util.ArrayList;
 public class Hero {
 	private int hp = 100; // 체력
 	private int gold = 0; // 골드
-
 	private String userId;  // 아이디
 	private String userPw;  // 비밀번호
 	private String userPwConfirm;  // 비밀번호 확인
-	
-	
 	private String weapon; // 무기
 	
 	public Hero() {}
@@ -70,19 +67,9 @@ public class Hero {
 		return userPwConfirm;
 	}
 
-
-	public void setUserPwConfirm(String userPwConfirm) {
-		this.userPwConfirm = userPwConfirm;
-	}
-
-
-	public String getWeapon() {
-		return weapon;
-	}
-
-
-	public void setWeapon(String weapon) {
-		this.weapon = weapon;
+	public String toString() {
+		return String.format("%s / %s / %s", userId, userPw, userName);
+		
 	}
 }
 
