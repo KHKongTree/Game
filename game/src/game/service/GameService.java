@@ -22,7 +22,7 @@ return user;
 
 public void login(String userId, String userPw, Hero signUpUser) {
 
-boolean idCheck = userId.equals( signUpUser.getuserId());
+boolean idCheck = userId.equals( signUpUser.getUserId());
 
 boolean pwCheck = userPw.equals( signUpUser.getUserPw());
 
@@ -32,7 +32,7 @@ GameView.loginUser = signUpUser;
 }
 }
 
-public boolean userUpdate(String userName, char userGender, String userPw) {
+public boolean userUpdate(String userName, String userPw) {
 
 if( !GameView.loginUser.getUserPw().equals(userPw) ) {
 
