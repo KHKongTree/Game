@@ -1,8 +1,11 @@
 package game.dto;
 
+import java.util.ArrayList;
+
 public class Hero {
 	private int hp = 100; // 체력
 	private int gold = 0; // 골드
+
 	private String userId;  // 아이디
 	private String userPw;  // 비밀번호
 	private String userPwConfirm;  // 비밀번호 확인
@@ -82,3 +85,4 @@ public class Hero {
 		this.weapon = weapon;
 	}
 }
+
