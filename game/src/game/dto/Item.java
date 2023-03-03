@@ -2,6 +2,15 @@ package game.dto;
 
 public class Item {
 
+	private String bronzeExe = "동도끼";
+	private String silverExe = "은도끼";
+	private String goldExe = "금도끼";
+	
+	private String fertiliser = "비료";
+	private String potion = "포션";
+	private String bugKiller = "해충제";
+	private String scissor = "가위";
+	
 	private int bronzeExeStriking = 10; // 동도끼 공격력
 	private int silverExeStriking = 20; // 은도끼 공격력
 	private int goldExeStrinking = 30;  // 금도끼 공격력
@@ -20,7 +29,48 @@ public class Item {
 	private int bugKillerCount=0;       // 해충제 개수
 	private int scissorCount=0;         // 가위   개수
 	
-
+	public String getBronzeExe() {
+		return bronzeExe;
+	}
+	public void setBronzeExe(String bronzeExe) {
+		this.bronzeExe = bronzeExe;
+	}
+	public String getSilverExe() {
+		return silverExe;
+	}
+	public void setSilverExe(String silverExe) {
+		this.silverExe = silverExe;
+	}
+	public String getGoldExe() {
+		return goldExe;
+	}
+	public void setGoldExe(String goldExe) {
+		this.goldExe = goldExe;
+	}
+	public String getFertiliser() {
+		return fertiliser;
+	}
+	public void setFertiliser(String fertiliser) {
+		this.fertiliser = fertiliser;
+	}
+	public String getPotion() {
+		return potion;
+	}
+	public void setPotion(String potion) {
+		this.potion = potion;
+	}
+	public String getBugKiller() {
+		return bugKiller;
+	}
+	public void setBugKiller(String bugKiller) {
+		this.bugKiller = bugKiller;
+	}
+	public String getScissor() {
+		return scissor;
+	}
+	public void setScissor(String scissor) {
+		this.scissor = scissor;
+	}
 	public int getBronzeExeStriking() {
 		return bronzeExeStriking;
 	}
@@ -105,4 +155,6 @@ public class Item {
 	public void setScissorCount(int scissorCount) {
 		this.scissorCount = scissorCount;
 	}
+	
+
 }
