@@ -2,8 +2,10 @@ package game.dto;
 
 public class Tree {
 
+	
+	private String tree;
 	private String treeName; // 이름
-	private double treeHeight; // 길이
+	public static double treeHeight; // 길이
 	private double growthrate; // 성장 비율
    
 	public String getTreeName() {

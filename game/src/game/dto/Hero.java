@@ -12,6 +12,15 @@ public class Hero {
 	
 	public Hero() {}
 
+	
+	
+	public Hero(String userId, String userPw) {
+		this.userId = userId;
+		this.userPw = userPw;
+	}
+
+
+
 	public Hero(int hp, int gold, String userId, String userPw, String userPwConfirm, String weapon) {
 		super();
 		this.hp = hp;
@@ -21,6 +30,8 @@ public class Hero {
 		this.userPwConfirm = userPwConfirm;
 		this.weapon = weapon;
 	}
+
+
 
 
 	public int getHp() {
@@ -66,10 +77,20 @@ public class Hero {
 	public String getUserPwConfirm() {
 		return userPwConfirm;
 	}
+	
+	public String getWeapon() {
+		return weapon;
+	}
+
+
+	public void setWeapon(String weapon) {
+		this.weapon = weapon;
+	}
 
 	public String toString() {
-		return String.format("%s / %s / %s", userId, userPw, userName);
+		return String.format("%s / %s ", userId, userPw);
 		
-	}
 }
+	
+	}
 

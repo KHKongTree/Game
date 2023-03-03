@@ -3,6 +3,7 @@ package game.view;
 import java.util.Scanner;
 
 import game.dto.Hero;
+import game.dto.Tree;
 import game.service.GameService;
 
 public class GameView {
@@ -22,6 +23,7 @@ public class GameView {
        do {
     	   System.out.println("1. 회원가입");
     	   System.out.println("2. 로그인");
+    	   System.out.println("4. 정보 확인");
     	   
     	   System.out.print("메뉴 선택 : ");
     	   input = sc.nextInt();
@@ -31,6 +33,7 @@ public class GameView {
     	   switch(input) {
     	   case 1 : this.signUp(); break;
     	   case 2 : this.login(); break;
+    	   case 4 : this.display(); break;
     	   default : System.out.println("잘못 입력 하셨습니다.");
     	   
     	   
@@ -51,11 +54,8 @@ public class GameView {
     	System.out.print("Pw 확인 : ");
     	String userPwConfirm = sc.next();
     	
-    	System.out.print("나무 이름 : ");
-    	String userName = sc.next();
-    	
-    	signUpUser = GameService.signUp(userId, userPw, userPwConfirm, userName);
-    	
+    	signUpUser = GameService.signUp(userId, userPw, userPwConfirm);
+    
     	if(signUpUser != null) {
     		
     		System.out.println("회원 가입 완료");
@@ -81,12 +81,12 @@ public class GameView {
 		String userPw = sc.next();
 		
 		
-		GameService gameService = new GameService();
-		gameService.login(userId, userPw, signUpUser);
+
+		service.login(userId, userPw, signUpUser);
 		
 		
 		if(GameView.loginUser !=null) {
-			System.out.println(GameView.loginUser.getUserName() + "님 환영합니다. ");
+			System.out.println("환영합니다.");
 			
 		} else {
 			System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
@@ -94,7 +94,18 @@ public class GameView {
 		
 	}
 	
-    
+    private void display() {
+    	System.out.println("정보 확인");
+
+    	
+    	System.out.println("HP : " + loginUser.getHp());
+    	System.out.println("골드 : " + loginUser.getGold());
+    	System.out.println("무기 : " + loginUser.getWeapon());
+    	System.out.println("나무 길이 : "+ Tree.treeHeight);
+    	
+
+    }
+	
     
     
     
