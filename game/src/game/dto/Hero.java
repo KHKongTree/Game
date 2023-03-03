@@ -8,10 +8,20 @@ public class Hero {
 	private String userId;  // 아이디
 	private String userPw;  // 비밀번호
 	private String userPwConfirm;  // 비밀번호 확인
-	private String weapon; // 무기
-	private int strike; // 공격력
+	private String weapon = "나뭇가지"; // 무기
+	private int strike = 5; // 공격력
+
 	
 	public Hero() {}
+
+	
+	
+	public Hero(String userId, String userPw) {
+		this.userId = userId;
+		this.userPw = userPw;
+	}
+
+
 
 	public Hero(int hp, int gold, String userId, String userPw, String userPwConfirm, String weapon) {
 		super();
@@ -24,10 +34,6 @@ public class Hero {
 	}
 
 
-	public Hero(String userId2, String userPw2) {
-		this.userId = userId2;
-		this.userPw = userPw2;
-	}
 
 	public int getHp() {
 		return hp;
@@ -64,18 +70,11 @@ public class Hero {
 	public String getUserPwConfirm() {
 		return userPwConfirm;
 	}
-
+	
 	public void setUserPwConfirm(String userPwConfirm) {
 		this.userPwConfirm = userPwConfirm;
 	}
 
-	public String getWeapon() {
-		return weapon;
-	}
-
-	public void setWeapon(String weapon) {
-		this.weapon = weapon;
-	}
 
 	public int getStrike() {
 		return strike;
@@ -84,7 +83,12 @@ public class Hero {
 	public void setStrike(int strike) {
 		this.strike = strike;
 	}
-	
-	
+  
+	public String toString() {
+		return String.format("%s / %s ", userId, userPw);
+		
+
 }
+	
+	}
 
