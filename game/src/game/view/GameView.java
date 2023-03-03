@@ -32,10 +32,7 @@ public class GameView {
     	   
     	   switch(input) {
     	   case 1 : this.signUp(); break;
-    	   case 2 : this.login(); 
-    	   			if(service.isLoginCheck()) {
-    	   				menu2();
-    	   			}
+    	   case 2 : if(this.login()) menu2();
     	   			break;
     	   case 0 : System.out.println("프로그램을 종료합니다."); break;
     	   default : System.out.println("잘못 입력 하셨습니다.");
@@ -48,7 +45,6 @@ public class GameView {
 	}
     
     private void menu2() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -76,13 +72,13 @@ public class GameView {
     	
     }
     
-	private void login() {
+	private boolean login() {
 		
 		System.out.println("--- 로그인 ---");
 		
 		if(signUpUser == null) {
 			System.out.println("회원 가입 후 진행해주세요.");
-			return;
+			return false;
 		}
 		
 		System.out.print("ID : ");
@@ -98,9 +94,11 @@ public class GameView {
 		
 		if(GameView.loginUser !=null) {
 			System.out.println("환영합니다.");
+			return true;
 			
 		} else {
 			System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
+			return false;
 		}
 		
 	}

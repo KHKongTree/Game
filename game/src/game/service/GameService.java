@@ -18,13 +18,12 @@ public class GameService {
 	}
 
 	public void login(String userId, String userPw, Hero signUpUser) {
-
+		
 		boolean idCheck = userId.equals(signUpUser.getUserId());
 
 		boolean pwCheck = userPw.equals(signUpUser.getUserPw());
 
 		if (idCheck && pwCheck) {
-
 			GameView.loginUser = signUpUser;
 		}
 	}
