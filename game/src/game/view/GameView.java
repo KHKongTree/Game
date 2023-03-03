@@ -519,7 +519,8 @@ public class GameView {
 		}
 	}
 
-
+	}
+	
     private void display() {
     	System.out.println("정보 확인");
 

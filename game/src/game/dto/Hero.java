@@ -71,15 +71,6 @@ public class Hero {
 		return userPwConfirm;
 	}
 	
-	public String getWeapon() {
-		return weapon;
-	}
-
-
-	public void setWeapon(String weapon) {
-		this.weapon = weapon;
-	}
-
 	public void setUserPwConfirm(String userPwConfirm) {
 		this.userPwConfirm = userPwConfirm;
 	}
