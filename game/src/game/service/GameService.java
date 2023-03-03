@@ -1,5 +1,9 @@
 package game.service;
 
+import java.util.Set;
+
+import javax.management.monitor.MonitorSettingException;
+
 import game.dto.Hero;
 import game.view.GameView;
 
@@ -29,5 +33,24 @@ public class GameService {
 		}
 	}
 
+	public boolean isLoginCheck() {
+		return false;
+		
+	}
 
+
+	public double Tree(Double treeHeight) {
+	
+		GameView.tree.setTreeHeight(treeHeight+5.0);
+		
+		return  GameView.tree.getTreeHeight();
+	}
+	
+	public void branchCut() {
+		
+	}
+	
+	public void useItem() {
+		
+	}
 }
