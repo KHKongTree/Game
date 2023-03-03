@@ -3,7 +3,7 @@ package game.dto;
 public class Woodcutter {
 
 	private int hp = 100; // 체력
-	private int Striking = 5;
+	private int Strike = 5;
 
 	
 	public int getHp() {
@@ -13,11 +13,11 @@ public class Woodcutter {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
-	public int getStriking() {
-		return Striking;
+	public int getStrike() {
+		return Strike;
 	}
-	public void setStriking(int striking) {
-		Striking = striking;
+	public void setStrike(int striking) {
+		Strike = striking;
 	}
 	
 }
