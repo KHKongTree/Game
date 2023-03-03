@@ -9,5 +9,5 @@ public class GameRun {
 		
 		view.Menu();
 	}
-	}
+}
 
