@@ -10,6 +10,7 @@ public class Hero {
 	private String userPwConfirm;  // 비밀번호 확인
 	private String weapon; // 무기
 	private int strike; // 공격력
+
 	
 	public Hero() {}
 
@@ -85,7 +86,5 @@ public class Hero {
 		this.strike = strike;
 	}
 
-	
-	
 }
 
