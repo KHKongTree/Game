@@ -8,8 +8,8 @@ public class Hero {
 	private String userId;  // 아이디
 	private String userPw;  // 비밀번호
 	private String userPwConfirm;  // 비밀번호 확인
-	private String weapon; // 무기
-	private int strike; // 공격력
+	private String weapon = "나뭇가지"; // 무기
+	private int strike = 5; // 공격력
 
 	
 	public Hero() {}
