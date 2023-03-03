@@ -24,10 +24,10 @@ public class GameView {
 	Woodcutter enemy = new Woodcutter();
 	Tree tree = new Tree();
 	public static Item item;
-
-
+	int day = 0;
+	
 	public void Menu() {
-
+		
 		int input = -1;
 		System.out.println(
 				"[♣Kong Tree♣]\n잭에겐 어머니의 유품인 씨앗 하나가 있었고,\n심자마자 잭의 키를 넘길 만큼 커져버렸다.\n소문을 들은 마을 사람들은 이 나무를 탐내게 되는데....\n");
@@ -70,6 +70,7 @@ public class GameView {
 
 	private void menu2() {
 		int input = -1;
+		day++;
 		
 		do {
 			try {
@@ -92,7 +93,7 @@ public class GameView {
 					beatWoodCutter();
 					break;
 				case 3:
-          store();
+					store();
 					break;
 				case 0:
 					System.out.println("프로그램을 종료합니다.");
@@ -110,6 +111,7 @@ public class GameView {
 			System.out.println();
 		} while (input != 0);
 		
+		
 	}
 
 	private void beatWoodCutter() {
@@ -120,7 +122,7 @@ public class GameView {
 			
 			int input = -1;
 			do {
-				System.out.printf("%4s : ","잭");
+				System.out.printf("%4s : "," 잭");
 				
 				for(int i = 0; i < me.getHp()/10 ; i ++) {
 					System.out.print("♣");
@@ -128,6 +130,8 @@ public class GameView {
 				for(int i = 0; i < 10 - (me.getHp()/10) ; i ++) {
 					System.out.print("♧");
 				}
+				
+				System.out.printf("(%d/100)", me.getHp());
 				
 				
 				System.out.println();
@@ -141,6 +145,7 @@ public class GameView {
 					System.out.print("♧");
 				}
 				
+				System.out.printf("(%d/100)", enemy.getHp());
 				
 				System.out.println();
 				try {
@@ -185,31 +190,37 @@ public class GameView {
 			me.setGold(me.getGold() + 100);
 			System.out.printf("총 골드 : %d", me.getGold() );
 			me.setHp(100);
+			enemy.setHp(100);
+			
 		}else if (me.getHp() == -1000) {
 			System.out.println("[나무꾼에게 도망쳤습니다. 나무꾼이 콩나무를 베어갑니다.]");
-			tree.setTreeHeight(tree.getTreeHeight() - 50);
-			System.out.printf("현재 콩나무 길이 : %d , 베어간 길이: -50m", tree.getTreeHeight());
+			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/10);
+			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/10);
 			me.setHp(100);
+			enemy.setHp(100);
+		
 		}else { 
 			System.out.println("[나무꾼에게 졌습니다. 나무꾼이 콩나무를 베어갑니다.]");
-			tree.setTreeHeight(tree.getTreeHeight() - 80);
-			System.out.printf("현재 콩나무 길이 : %d , 베어간 길이: -80m", tree.getTreeHeight());
+			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/5);
+			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/5);
 			me.setHp(100);
+			enemy.setHp(100);
 		}
 		
+		day++;
 	}
 
 	/// 전투 액션 3개
 	
 	private void attack() {
-		int damage = (random.nextInt(me.getStriking()) + 1);
-		int damaged = (random.nextInt(enemy.getStriking()) + 1);
+		int damage = (random.nextInt(me.getStrike()) + 2);
+		int damaged = (random.nextInt(enemy.getStrike()) + 1);
 		
 		me.setHp(me.getHp()- damaged);
 		enemy.setHp(enemy.getHp() - damage);
 		
 		
-		System.out.printf("잭이 나뭇가지로 %d의 데미지를 주었습니다\n", damage);
+		System.out.printf("잭이 %s로 %d의 데미지를 주었습니다\n", me.getWeapon() , damage);
 		System.out.printf("나무꾼의 공격으로 %d의 데미지를 입었습니다", damaged);
 		
 	}
@@ -217,8 +228,8 @@ public class GameView {
 
 	private void healing() {
 		
-		int healing = random.nextInt(me.getStriking() / 2) + 1;
-		int damaged = random.nextInt(enemy.getStriking()) + 1;
+		int healing = random.nextInt(me.getStrike() / 2) + 1;
+		int damaged = random.nextInt(enemy.getStrike()) + 1;
 		
 		me.setHp(me.getHp() + healing);
 		me.setHp(me.getHp() - damaged);
@@ -284,7 +295,7 @@ public class GameView {
 		if (GameView.loginUser != null) {
 			System.out.printf("환영합니다. %s님", userId);
 			menu2();
-
+			return true;
 
 		} else {
 			System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
