@@ -114,7 +114,6 @@ public class GameView {
 		
 		System.out.println("[아이템 상점]");
 		
-		
 		int input = 0;
 		do {
 			System.out.println();

@@ -84,7 +84,6 @@ public class Hero {
 	public void setStrike(int strike) {
 		this.strike = strike;
 	}
-
 	
 	
 }
