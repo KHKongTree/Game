@@ -6,6 +6,7 @@ import game.dto.Item;
 import game.view.GameView;
 
 public class GameService {
+
 	private boolean loginCheck = false;
 	
 	public static Hero signUp(String userId, String userPw, String userPwConfirm) {
@@ -65,6 +66,7 @@ public class GameService {
 			return false;
 		}
 		
+
 	}
 
 

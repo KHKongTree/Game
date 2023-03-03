@@ -2,6 +2,7 @@ package game.dto;
 
 public class Tree {
 
+
 	private double treeHeight = 5.0; // 길이
 	private double growthrate = 1.0; // 성장 비율
 	

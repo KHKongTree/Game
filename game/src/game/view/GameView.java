@@ -8,6 +8,7 @@ import game.dto.Hero;
 import game.dto.Tree;
 import game.dto.Woodcutter;
 import game.dto.Item;
+
 import game.service.GameService;
 
 public class GameView {
@@ -95,6 +96,9 @@ public class GameView {
 				case 3:
 					store();
 					break;
+        case 4:
+          this.display(); 
+          break;
 				case 0:
 					System.out.println("프로그램을 종료합니다.");
 					break;
@@ -249,7 +253,6 @@ public class GameView {
 	
 	private void signUp() {
 
-
     	System.out.println("--- 회원 가입 ---");
     	
     	System.out.print("ID : ");
@@ -261,7 +264,7 @@ public class GameView {
     	System.out.print("Pw 확인 : ");
     	String userPwConfirm = sc.next();
     	
-    	
+
     	signUpUser = GameService.signUp(userId, userPw, userPwConfirm);
     	item = new Item();
     	
@@ -288,6 +291,7 @@ public class GameView {
 
 		System.out.print("Pw : ");
 		String userPw = sc.next();
+
 
 		GameService gameService = new GameService();
 		gameService.login(userId, userPw, signUpUser);
@@ -374,6 +378,17 @@ public class GameView {
 			return 0;
 		}
 
-	}
+
+    private void display() {
+    	System.out.println("정보 확인");
+
+    	
+    	System.out.println("HP : " + loginUser.getHp());
+    	System.out.println("골드 : " + loginUser.getGold());
+    	System.out.println("무기 : " + loginUser.getWeapon());
+    	System.out.println("나무 길이 : "+ Tree.treeHeight);
+    	
+
+    }
 
 }
