@@ -1,9 +1,12 @@
 package game.service;
 
+
 import game.dto.Hero;
 import game.view.GameView;
 
 public class GameService {
+	private boolean loginCheck = false;
+	
 	public static Hero signUp(String userId, String userPw, String userPwConfirm) {
 
 		Hero user = null;
@@ -19,6 +22,8 @@ public class GameService {
 
 	public void login(String userId, String userPw, Hero signUpUser) {
 
+		
+		
 		boolean idCheck = userId.equals(signUpUser.getUserId());
 
 		boolean pwCheck = userPw.equals(signUpUser.getUserPw());
@@ -26,8 +31,13 @@ public class GameService {
 		if (idCheck && pwCheck) {
 
 			GameView.loginUser = signUpUser;
+			loginCheck = true;
 		}
 	}
-
+	
+	public boolean isLoginCheck() {
+		return loginCheck;
+	}
+	
 
 }

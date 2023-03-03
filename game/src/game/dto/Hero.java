@@ -9,6 +9,7 @@ public class Hero {
 	private String userPw;  // 비밀번호
 	private String userPwConfirm;  // 비밀번호 확인
 	private String weapon; // 무기
+	private int Striking = 10;
 	
 	public Hero() {}
 
@@ -75,6 +76,10 @@ public class Hero {
 	public String toString() {
 		return String.format("%s / %s / %s", userId, userPw);
 		
+	}
+
+	public int getStriking() {
+		return Striking;
 	}
 }
 
