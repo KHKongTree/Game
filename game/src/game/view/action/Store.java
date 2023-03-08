@@ -2,15 +2,14 @@ package game.view.action;
 
 public class Store {
 	
-	private void store() {
+	public void menu() {
 		
 		System.out.println("[아이템 상점]");
-		
 		
 		int input = 0;
 		do {
 			System.out.println();
-			System.out.println("내가 가지고 있는 골드 : " + signUpUser.getGold());
+			System.out.println("내가 가지고 있는 골드 : " + getGold());
 			
 			System.out.println("1. 동도끼 (100G)");
 			System.out.println("2. 은도끼 (200G)");
