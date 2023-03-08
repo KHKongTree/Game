@@ -101,6 +101,18 @@ public class Hero {
 		
 
 }
+
+
+
+	public String getWeapon() {
+		return weapon;
+	}
+
+
+
+	public void setWeapon(String weapon) {
+		this.weapon = weapon;
+	}
 	
 	}
 

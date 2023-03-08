@@ -1,13 +1,14 @@
 package game.run;
 
-import game.view.action.TreeCare;
+
+import game.view.menu.GameMenu1;
 
 public class GameRun {
 	public static void main(String[] args) {
+
+		GameMenu1 runner = new GameMenu1();
 		
-		TreeCare tree = new TreeCare();
-		
-		tree.treeCareMenu();
+		runner.Menu();
 		
 	}
 }
