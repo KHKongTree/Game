@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import game.dto.UserState;
 import game.dto.Woodcutter;
-import game.service.PipeObjectService;
 
 public class Battle {
 	
@@ -14,8 +13,7 @@ public class Battle {
 	Random random = new Random();
 	// 외부 툴
 	
-	PipeObjectService pipe = new PipeObjectService();
-	UserState me = PipeObjectService.currentState;
+	UserState me = new UserState();
 	Woodcutter enemy = new Woodcutter();
 	// 나와 적
 	

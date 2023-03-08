@@ -1,13 +1,17 @@
 package game.view.action;
 
-public class Display {
+import game.dto.UserState;
 
-    private void display() {
+public class Display {
+	
+	UserState me = new UserState();
+	
+    public void display() {
     	System.out.println("정보 확인");
-    	System.out.println("HP : " + loginUser.getHp());
-    	System.out.println("골드 : " + loginUser.getGold());
-    	System.out.println("무기 : " + loginUser.getWeapon());
-    	System.out.println("나무 길이 : "+ tree.getTreeHeight());
+    	System.out.println("HP : " + me.getHp());
+    	System.out.println("골드 : " + me.getGold());
+    	System.out.println("무기 : " + me.getWeapon());
+    	System.out.println("나무 길이 : "+ me.getTreeHeight());
     	
     }
 }	

@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import game.dto.UserState;
-import game.service.PipeObjectService;
 import game.view.action.Battle;
 
 public class GameMenu1 {
@@ -12,13 +11,6 @@ public class GameMenu1 {
 	Scanner sc = new Scanner(System.in);
 	
 	GameMenu2 start = new GameMenu2();
-	UserState me = new UserState();
-	PipeObjectService pipe = new PipeObjectService();
-//	TreeCare care = new TreeCare();
-	Battle battle = new Battle();
-//	Store store = new Store();
-	
-	
 	
 	public void menu() {
 		

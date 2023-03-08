@@ -1,15 +1,24 @@
 package game.view.action;
 
+import java.util.Scanner;
+
+import game.dto.UserState;
+
 public class Store {
 	
 	public void menu() {
+		
+		Scanner sc = new Scanner(System.in);
+		UserState me = new UserState();
+
+		
 		
 		System.out.println("[아이템 상점]");
 		
 		int input = 0;
 		do {
 			System.out.println();
-			System.out.println("내가 가지고 있는 골드 : " + getGold());
+			System.out.println("내가 가지고 있는 골드 : " + me.getGold());
 			
 			System.out.println("1. 동도끼 (100G)");
 			System.out.println("2. 은도끼 (200G)");

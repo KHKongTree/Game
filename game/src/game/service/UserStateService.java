@@ -1,6 +1,5 @@
 package game.service;
 
-import game.view.GameView;
 
 public class UserStateService {
 	public boolean buyWeapon(String weapon, int price, int exStrike) {
