@@ -20,10 +20,8 @@ public class GameView {
 	private Hero signUpUser;
 
 	public static Hero loginUser = null;
-
-	Hero me = new Hero();
 	Woodcutter enemy = new Woodcutter();
-	Tree tree = new Tree();
+	public static Tree tree = new Tree();
 	public static Item item;
 	int day = 0;
 
@@ -31,20 +29,20 @@ public class GameView {
 		
 
 		System.out.println("[나무꾼을 이겨라!]");
-		while(me.getHp() >= 0 && enemy.getHp() >= 0) {
+		while(signUpUser.getHp() >= 0 && enemy.getHp() >= 0) {
 			
 			int input = -1;
 			do {
 				System.out.printf("%4s : "," 잭");
 				
-				for(int i = 0; i < me.getHp()/10 ; i ++) {
+				for(int i = 0; i < signUpUser.getHp()/10 ; i ++) {
 					System.out.print("♣");
 				}
-				for(int i = 0; i < 10 - (me.getHp()/10) ; i ++) {
+				for(int i = 0; i < 10 - (signUpUser.getHp()/10) ; i ++) {
 					System.out.print("♧");
 				}
 				
-				System.out.printf("(%d/100)", me.getHp());
+				System.out.printf("(%d/100)", signUpUser.getHp());
 				
 				
 				System.out.println();
@@ -93,30 +91,30 @@ public class GameView {
 				}
 
 				System.out.println();
-			} while (me.getHp() >= 0 && enemy.getHp() >= 0);
+			} while (signUpUser.getHp() >= 0 && enemy.getHp() >= 0);
 			
 
 		}
 		
-		if(me.getHp() >= 0) {
+		if(signUpUser.getHp() >= 0) {
 			System.out.println("[나무꾼이 쓰러졌습니다. 100골드를 획득했습니다.]");
-			me.setGold(me.getGold() + 100);
-			System.out.printf("총 골드 : %d", me.getGold() );
-			me.setHp(100);
+			signUpUser.setGold(signUpUser.getGold() + 100);
+			System.out.printf("총 골드 : %d", signUpUser.getGold() );
+			signUpUser.setHp(100);
 			enemy.setHp(100);
 			
-		}else if (me.getHp() == -1000) {
+		}else if (signUpUser.getHp() == -1000) {
 			System.out.println("[나무꾼에게 도망쳤습니다. 나무꾼이 콩나무를 베어갑니다.]");
 			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/10);
 			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/10);
-			me.setHp(100);
+			signUpUser.setHp(100);
 			enemy.setHp(100);
 		
 		}else { 
 			System.out.println("[나무꾼에게 졌습니다. 나무꾼이 콩나무를 베어갑니다.]");
 			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/5);
 			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/5);
-			me.setHp(100);
+			signUpUser.setHp(100);
 			enemy.setHp(100);
 		}
 		
@@ -126,14 +124,14 @@ public class GameView {
 	/// 전투 액션 3개
 	
 	private void attack() {
-		int damage = (random.nextInt(me.getStrike()) + 2);
+		int damage = (random.nextInt(signUpUser.getStrike()) + 2);
 		int damaged = (random.nextInt(enemy.getStrike()) + 1);
 		
-		me.setHp(me.getHp()- damaged);
+		signUpUser.setHp(signUpUser.getHp()- damaged);
 		enemy.setHp(enemy.getHp() - damage);
 		
 		
-		System.out.printf("잭이 %s로 %d의 데미지를 주었습니다\n", me.getWeapon() , damage);
+		System.out.printf("잭이 %s로 %d의 데미지를 주었습니다\n", signUpUser.getWeapon() , damage);
 		System.out.printf("나무꾼의 공격으로 %d의 데미지를 입었습니다", damaged);
 		
 	}
@@ -141,11 +139,11 @@ public class GameView {
 
 	private void healing() {
 		
-		int healing = random.nextInt(me.getStrike() / 2) + 1;
+		int healing = random.nextInt(signUpUser.getStrike() / 2) + 1;
 		int damaged = random.nextInt(enemy.getStrike()) + 1;
 		
-		me.setHp(me.getHp() + healing);
-		me.setHp(me.getHp() - damaged);
+		signUpUser.setHp(signUpUser.getHp() + healing);
+		signUpUser.setHp(signUpUser.getHp() - damaged);
 		
 		System.out.printf("잭은 방어를 하여 %d를 회복하였습니다.\n", healing);
 		System.out.printf("나무꾼의 공격으로 %d의 데미지를 입었습니다.", damaged);
@@ -155,7 +153,7 @@ public class GameView {
 	
 	private void run() {
 		
-		me.setHp(-1000);
+		signUpUser.setHp(-1000);
 		
 
 	}
@@ -221,214 +219,6 @@ public class GameView {
 		
 	}
 	
-
-	  public void treeCareMenu() {
-	       int input = 0;
-	    	
-	       do {
-	    	   System.out.println("[돌보기 메뉴]");
-	    	   System.out.println("1. 물주기");
-	    	   System.out.println("2. 가지치기");
-	    	   System.out.println("3. 아이템 사용하기");
-	    	   System.out.println("0. 나가기");
-	    	   
-	    	   System.out.println();
-
-	    	   System.out.print("돌보기 메뉴를 선택해주세요. : ");
-	    	   input = sc.nextInt(); 
-	    	   
-	    	   System.out.println();
-	    	   
-	    	   switch(input) {
-	    	   case 1 : this.water(); break;
-	    	   case 2 : this.branchCut(); break;
-	    	   case 3 : this.useItem();  break;
-	  	       case 0 : System.out.println("나무 돌보기를 나갑니다."); break;
-	    	   default : System.out.println("잘못 입력 하셨습니다.");
-	    	   }
-	    	   System.out.println();
-	        } while (input != 0);
-
-		}
-
-	private void water() {
-		double a = service.Tree(tree.getTreeHeight());
-	
-		
-		System.out.println("================================");
-		System.out.println("2.0L를 주었습니다.");
-		System.out.println("♣5.m가 자랐습니다!♣");
-		System.out.printf("나무의 키가 %f가 되었습니다.", a);
-
-	}
-
-	private void branchCut() {
-		
-		if(item.getScissorCount()>0) { //가위가 있을 떄
-			item.setScissorCount(item.getScissorCount()-1); //가위를 사용했을 때
-			tree.setGrowthrate(1.0); // 나무 비율 초기화
-			System.out.println("가지치기 완료"); 
-		}else {
-			System.out.println("가위 없습니다.");
-		}
-		
-		
-	}
-
-	private void useItem() {
-		int input = 0;
-    	
-	       do {
-	    	   System.out.println("[아이템 메뉴]");
-	    	   System.out.println("1. 비료");
-	    	   System.out.println("2. 물약");
-	    	   System.out.println("3. 해충제");
-	    	   System.out.println("0. 나가기");
-	    	
-	    	 
-	    	   
-	    	   System.out.println();
-
-	    	   System.out.print("아이템 메뉴를 선택해주세요. : ");
-	    	   input = sc.nextInt(); 
-	    	   
-	    	   System.out.println();
-	    	   
-	    	   switch(input) {
-	    	   case 1 : this.fertiliser(); break;
-	    	   case 2 : this.potion();  break;
-	    	   case 3 : this.bugKiller();  break;
-	  	       case 0 : System.out.println("아이템 메뉴를 나갑니다."); break;
-	    	   default : System.out.println("잘못 입력 하셨습니다.");
-	    	   }
-	    	   System.out.println();
-	        } while (input != 0);
-	       
-	  
-
-		}
-
-	private void fertiliser() {
-		
-		if(item.getFertiliserCount()>0) {
-			item.setFertiliserCount(item.getFertiliserCount()-1);
-			tree.setTreeHeight(tree.getTreeHeight()+10);
-			System.out.printf("나무가 10m 자라 %fm가 되었습니다. ",tree.getTreeHeight());
-		} else {
-			System.out.println("비료가 없습니다.");
-		}
-		
-	}
-
-	private void potion() {
-	
-		if(item.getPotionCount()>0) {
-			item.setPotionCount(item.getPotionCount()-1);
-			tree.setTreeHeight(tree.getTreeHeight()+50);
-			System.out.printf("나무가 50m 자라 %fm가 되었습니다. ",tree.getTreeHeight());
-		} else {
-			System.out.println("물약이 없습니다.");
-		}
-	
-		
-	}
-
-	private void bugKiller() {
-		
-		if(item.getBugKillerCount()>0) {
-			item.setBugKillerCount(item.getBugKillerCount()-1);
-			tree.setTreeHeight(tree.getTreeHeight()+30);
-			System.out.printf("나무가 30m 자라 %fm가 되었습니다. ",tree.getTreeHeight());
-		} else {
-			System.out.println("해충제가 없습니다.");
-		}
-	
-		
-	}
-
-
-		
-		
-	
-
-
-
-
-    
-    
-	private void store() {
-		
-		System.out.println("[아이템 상점]");
-		
-		
-		int input = 0;
-		do {
-			System.out.println();
-			System.out.println("내가 가지고 있는 골드 : " + signUpUser.getGold());
-			
-			System.out.println("1. 동도끼 (100G)");
-			System.out.println("2. 은도끼 (200G)");
-			System.out.println("3. 금도끼 (300G)");
-			System.out.println("4. 비료 (50G)");
-			System.out.println("5. 물약 (100G)");
-			System.out.println("6. 해충제 (80G)");
-			System.out.println("7. 가위 (20G)");
-			System.out.println("0. 상점 나가기");
-			
-			System.out.print("메뉴 선택 : ");
-			input = sc.nextInt();
-			
-			switch (input) {
-			case 1: 
-				successBuyWeapon(item.getBronzeExe(), item.getBronzeExePrice(), item.getBronzeExeStriking());
-				break;
-			case 2:
-				successBuyWeapon(item.getSilverExe(), item.getSilverExePrice(), item.getSilverExeStriking());
-				break;
-			case 3:
-				successBuyWeapon(item.getGoldExe(), item.getGoldExePrice(), item.getGoldExeStrinking());
-				break;
-				
-			case 4:
-				item.setFertiliserCount(item.getFertiliserCount()+successBuyItem(item.getFertiliser(), item.getFertiliserPrice()));
-				break;
-			case 5:
-				item.setPotionCount(item.getPotionCount()+successBuyItem(item.getPotion(), item.getPotionPrice()));
-				break;
-			case 6:
-				item.setBugKillerCount(item.getBugKillerCount()+successBuyItem(item.getBugKiller(), item.getPotionPrice()));
-				break;
-			case 7:
-				item.setScissorCount(item.getScissorCount()+successBuyItem(item.getScissor(), item.getScissorPrice()));
-				break;
-			case 0: break;
-			}
-			
-		} while (input != 0);
-		
-	}
-	
-	private void successBuyWeapon(String item, int price, int exStrike) {
-		
-		if(service.buyWeapon(item, price, exStrike)) System.out.printf("%s를 획득했습니다.\n", item);
-		else System.out.println("소지한 골드가 부족합니다.\n");
-		
-	}
-	
-	private int successBuyItem(String item, int price) {
-		
-		if(service.buyItem(price)) {
-			System.out.printf("%s를 획득했습니다.\n", item);
-			return 1;
-		}
-		else {
-			System.out.println("소지한 골드가 부족합니다.\n");
-			return 0;
-		}
-	}
-
-	}
-	
     private void display() {
     	System.out.println("정보 확인");
 
@@ -437,7 +227,6 @@ public class GameView {
     	System.out.println("골드 : " + loginUser.getGold());
     	System.out.println("무기 : " + loginUser.getWeapon());
     	System.out.println("나무 길이 : "+ tree.getTreeHeight());
-    	
 
     }
 

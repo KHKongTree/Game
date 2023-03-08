@@ -16,6 +16,18 @@ public class Hero {
 
 	
 	
+	public String getWeapon() {
+		return weapon;
+	}
+
+
+
+	public void setWeapon(String weapon) {
+		this.weapon = weapon;
+	}
+
+
+
 	public Hero(String userId, String userPw) {
 		this.userId = userId;
 		this.userPw = userPw;
