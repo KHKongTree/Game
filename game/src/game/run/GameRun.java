@@ -1,13 +1,13 @@
 package game.run;
 
-import game.view.GameView;
+import game.view.menu.GameMenu1;
 
 public class GameRun {
 	public static void main(String[] args) {
 		
-		GameView view = new GameView();
+		GameMenu1 runner = new GameMenu1();
 		
-		view.Menu();
+		runner.Menu();
 		
 	}
 }
