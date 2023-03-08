@@ -4,18 +4,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import game.view.action.TreeCare;
+import game.dto.UserState;
+import game.service.PipeObjectService;
 import game.view.action.Battle;
 import game.view.action.Store;
 
 public class GameMenu2 {
-
-	Scanner sc = new Scanner(System.in);
-
-//	TreeCare care = new TreeCare();
-	Battle battle = new Battle();
-//	Store store = new Store();
-
+//
+//	Scanner sc = new Scanner(System.in);
+//	UserState me = new UserState();
+//	PipeObjectService pipe = new PipeObjectService();
+////	TreeCare care = new TreeCare();
+//	Battle battle = new Battle();
+////	Store store = new Store();
+//	
+//	
 	public void menu() {
+		
 		int input = -1;
 		do {
 			try {
@@ -36,6 +41,7 @@ public class GameMenu2 {
 //					care.Menu();
 					break;
 				case 2:
+					PipeObjectService.currentState = me;
 					battle.menu();
 					break;
 				case 3:
@@ -52,10 +58,11 @@ public class GameMenu2 {
 				sc.nextLine(); // 입력 버퍼에 잘못 입력된 내용 제거
 				input = -1; // 반복문이 종료 되는 것을 방지
 			}
-
+			pipe.load();
 			System.out.println();
+			
 		} while (input != 0);
-
+		
 	}
 
 }

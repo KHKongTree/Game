@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 public class UserState implements Serializable{
 	
-	private String userName;
+	private static String userName = "잭";
 	private int hp = 100; // 체력
-	private int gold = 1000; // 골드
-	private String weapon = "나뭇가지"; // 무기
-	private int strike = 5; // 공격력
+	private static int gold = 1000; // 골드
+	private static String weapon = "나뭇가지"; // 무기
+	private static int strike = 5; // 공격력
 	//잭의 정보
 	
-	private double treeHeight = 5.0; // 길이
-	private double growthrate = 1.0; // 성장 비율
+	private static double treeHeight = 5.0; // 길이
+	private static double growthrate = 1.0; // 성장 비율
 	//콩나무의 정보
 	
 	//잭과 콩나무의 초기값

@@ -3,11 +3,22 @@ package game.view.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import game.dto.UserState;
+import game.service.PipeObjectService;
+import game.view.action.Battle;
+
 public class GameMenu1 {
 
 	Scanner sc = new Scanner(System.in);
 	
 	GameMenu2 start = new GameMenu2();
+	UserState me = new UserState();
+	PipeObjectService pipe = new PipeObjectService();
+//	TreeCare care = new TreeCare();
+	Battle battle = new Battle();
+//	Store store = new Store();
+	
+	
 	
 	public void menu() {
 		
@@ -19,8 +30,8 @@ public class GameMenu1 {
 							);
 		do {
 			try {
-				System.out.println("1. 새 게임시작");
-				System.out.println("2. 로딩");
+				System.out.println("1. 새 이야기");
+				System.out.println("2. 했던 이야기 들어보기");
 				
 				System.out.println("0. 프로그램 종료");
 				

@@ -4,9 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-import game.dto.Hero;
-import game.dto.Tree;
+import game.dto.UserState;
 import game.dto.Woodcutter;
+import game.service.PipeObjectService;
 
 public class Battle {
 	
@@ -14,12 +14,11 @@ public class Battle {
 	Random random = new Random();
 	// 외부 툴
 	
-	Hero me = new Hero();
+	PipeObjectService pipe = new PipeObjectService();
+	UserState me = PipeObjectService.currentState;
 	Woodcutter enemy = new Woodcutter();
 	// 나와 적
 	
-	Tree tree = new Tree();
-	// 나무 정보
 	
 	public void menu() {
 		System.out.println("[나무꾼을 이겨라!]");
@@ -98,15 +97,15 @@ public class Battle {
 			
 		}else if (me.getHp() == -1000) {
 			System.out.println("[나무꾼에게 도망쳤습니다. 나무꾼이 콩나무를 베어갑니다.]");
-			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/10);
-			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/10);
+			me.setTreeHeight(me.getTreeHeight() - me.getTreeHeight()/10);
+			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", me.getTreeHeight(), me.getTreeHeight()/10);
 			me.setHp(100);
 			enemy.setHp(100);
 		
 		}else { 
 			System.out.println("[나무꾼에게 졌습니다. 나무꾼이 콩나무를 베어갑니다.]");
-			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/5);
-			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/5);
+			me.setTreeHeight(me.getTreeHeight() - me.getTreeHeight()/5);
+			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", me.getTreeHeight(),me.getTreeHeight()/5);
 			me.setHp(100);
 			enemy.setHp(100);
 		}
