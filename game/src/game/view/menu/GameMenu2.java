@@ -3,11 +3,19 @@ package game.view.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import game.view.action.TreeCare;
+import game.view.action.Battle;
+import game.view.action.Store;
+
 public class GameMenu2 {
-	
+
 	Scanner sc = new Scanner(System.in);
-	
-	private void menu2() {
+
+//	TreeCare care = new TreeCare();
+	Battle battle = new Battle();
+//	Store store = new Store();
+
+	public void menu() {
 		int input = -1;
 		do {
 			try {
@@ -15,8 +23,8 @@ public class GameMenu2 {
 				System.out.println("1. 나무 돌보기");
 				System.out.println("2. 나무꾼을 이겨라");
 				System.out.println("3. 상점");
-				System.out.println("4. 내 정보");
-				System.out.println("5. 콩나무 포기하기");
+
+				System.out.println("0. 콩나무 포기하기");
 
 				System.out.print("메뉴 선택 : ");
 				input = sc.nextInt();
@@ -25,23 +33,19 @@ public class GameMenu2 {
 
 				switch (input) {
 				case 1:
-					treeCareMenu();
+//					care.Menu();
 					break;
 				case 2:
-					beatWoodCutter();
+					battle.menu();
 					break;
 				case 3:
-					store();
+//					store.menu();
 					break;
-		        case 4:
-		          this.display(); 
-		          break;
 				case 0:
 					System.out.println("프로그램을 종료합니다.");
 					break;
 				default:
 					System.out.println("잘못 입력 하셨습니다.");
-
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("[잘못된 형식의 입력입니다.]");
@@ -51,8 +55,7 @@ public class GameMenu2 {
 
 			System.out.println();
 		} while (input != 0);
-		
-		
+
 	}
-	
+
 }

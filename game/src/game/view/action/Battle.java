@@ -8,13 +8,20 @@ import game.dto.Hero;
 import game.dto.Tree;
 import game.dto.Woodcutter;
 
-public class BeatWoodcutter {
+public class Battle {
+	
 	Scanner sc = new Scanner(System.in);
 	Random random = new Random();
+	// 외부 툴
+	
 	Hero me = new Hero();
 	Woodcutter enemy = new Woodcutter();
+	// 나와 적
+	
 	Tree tree = new Tree();
-	public void beatWoodCutter() {
+	// 나무 정보
+	
+	public void menu() {
 		System.out.println("[나무꾼을 이겨라!]");
 		while(me.getHp() >= 0 && enemy.getHp() >= 0) {
 			
@@ -56,7 +63,6 @@ public class BeatWoodcutter {
 
 					System.out.println();
 						
-					//gameservice service로 인스턴스 만듦
 					
 					switch (input) {
 					case 1:

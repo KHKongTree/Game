@@ -7,7 +7,6 @@ import game.dto.Hero;
 import game.dto.Item;
 import game.dto.Tree;
 import game.dto.Woodcutter;
-import game.service.GameService;
 
 public class TreeCare {
 	
@@ -21,9 +20,8 @@ public class TreeCare {
 	Woodcutter enemy = new Woodcutter();
 	public static Tree tree = new Tree();
 	public static Item item;
-	int day = 0;
 	
-	  public void treeCareMenu() {
+	  public void Menu() {
 	       int input = 0;
 	    	
 	       do {
@@ -53,7 +51,7 @@ public class TreeCare {
 		}
 
 	private void water() {
-		double a = service.Tree(tree.getTreeHeight());
+		double a = tree.getTreeHeight();
 	
 		
 		System.out.println("================================");
