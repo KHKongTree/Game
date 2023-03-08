@@ -13,9 +13,9 @@ public class GameMenu2 {
 
 	Scanner sc = new Scanner(System.in);
 	UserState me = new UserState();
-//	TreeCare care = new TreeCare();
+	TreeCare care = new TreeCare();
 	Battle battle = new Battle();
-//	Store store = new Store();
+	Store store = new Store();
 	Display info = new Display();
 	
 	
@@ -39,12 +39,13 @@ public class GameMenu2 {
 
 				switch (input) {
 				case 1:
-//					care.Menu();
+					care.Menu();
 					break;
 				case 2:
 					battle.menu();
 					break;
 				case 3:
+					store.menu();
 					break;
 				case 4:
 					info.display();

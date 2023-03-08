@@ -6,7 +6,7 @@ import java.util.Scanner;
 import game.dto.UserState;
 import game.service.TreeActionService;
 
-public class TreeCare {
+public class TreeCareItem {
 
 	Scanner sc = new Scanner(System.in);
 	Random random = new Random();
@@ -15,37 +15,36 @@ public class TreeCare {
 	public static UserState tree = new UserState();
 	public static TreeActionService action = new TreeActionService();
 
-	public static TreeCareItem useItem = new TreeCareItem();
 	
-	public void Menu() {
+	public void menu() {
 		int input = 0;
 
 		do {
-			System.out.println("[돌보기 메뉴]");
-			System.out.println("1. 물주기");
-			System.out.println("2. 가지치기");
-			System.out.println("3. 아이템 사용하기");
+			System.out.println("[아이템 메뉴]");
+			System.out.println("1. 비료");
+			System.out.println("2. 물약");
+			System.out.println("3. 해충제");
 			System.out.println("0. 나가기");
 
 			System.out.println();
 
-			System.out.print("돌보기 메뉴를 선택해주세요. : ");
+			System.out.print("아이템 메뉴를 선택해주세요. : ");
 			input = sc.nextInt();
 
 			System.out.println();
 
 			switch (input) {
 			case 1:
-				action.water();
+				action.fertiliser();
 				break;
 			case 2:
-				action.branchCut();
+				action.potion();
 				break;
 			case 3:
-				useItem.menu();
+				action.bugKiller();
 				break;
 			case 0:
-				System.out.println("나무 돌보기를 나갑니다.");
+				System.out.println("아이템 메뉴를 나갑니다.");
 				break;
 			default:
 				System.out.println("잘못 입력 하셨습니다.");
@@ -54,5 +53,4 @@ public class TreeCare {
 		} while (input != 0);
 
 	}
-
 }

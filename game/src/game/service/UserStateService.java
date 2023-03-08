@@ -1,14 +1,17 @@
 package game.service;
 
+import game.dto.UserState;
 
 public class UserStateService {
-	public boolean buyWeapon(String weapon, int price, int exStrike) {
+	
+	UserState me = new UserState();
+	
+	public static boolean buyWeapon(String weapon, int price, int exStrike) {
 
-		if (GameView.loginUser.getGold() >= price) {
-			GameView.loginUser.setWeapon(weapon);
-			GameView.loginUser.setGold(GameView.loginUser.getGold() - price);
-
-			GameView.loginUser.setStrike(exStrike);
+		if (UserState.getGold() >= price) {
+			UserState.setWeapon(weapon);
+			UserState.setGold(UserState.getGold() - price);
+			UserState.setStrike(exStrike);
 			return true;
 		} else {
 			return false;
@@ -16,10 +19,10 @@ public class UserStateService {
 
 	}
 
-	public boolean buyItem(int price) {
+	public static boolean buyItem(int price) {
 
-		if (GameView.loginUser.getGold() >= price) {
-			GameView.loginUser.setGold(GameView.loginUser.getGold() - price);
+		if (UserState.getGold() >= price) {
+			UserState.setGold(UserState.getGold() - price);
 			return true;
 		} else {
 			return false;

@@ -2,30 +2,29 @@ package game.dto;
 
 import java.io.Serializable;
 
-public class UserState implements Serializable{
-	
+public class UserState implements Serializable {
+
 	private static String userName = "잭";
-	private int hp = 100; // 체력
+	private static int hp = 100; // 체력
 	private static int gold = 1000; // 골드
 	private static String weapon = "나뭇가지"; // 무기
 	private static int strike = 5; // 공격력
-	//잭의 정보
-	
+	// 잭의 정보
+
 	private static double treeHeight = 5.0; // 길이
 	private static double growthrate = 1.0; // 성장 비율
-	//콩나무의 정보
+	// 콩나무의 정보
 	
-	//잭과 콩나무의 초기값
-	
+
 	public UserState() {
 	}
-
-	public String getWeapon() {
-		return weapon;
+	
+	public static String getUserName() {
+		return userName;
 	}
 
-	public void setWeapon(String weapon) {
-		this.weapon = weapon;
+	public static void setUserName(String userName) {
+		UserState.userName = userName;
 	}
 
 	public int getHp() {
@@ -33,49 +32,53 @@ public class UserState implements Serializable{
 	}
 
 	public void setHp(int hp) {
-		this.hp = hp;
+		UserState.hp = hp;
 	}
 
-	public int getGold() {
+	public static int getGold() {
 		return gold;
 	}
 
-	public void setGold(int gold) {
-		this.gold = gold;
+	public static void setGold(int gold) {
+		UserState.gold = gold;
 	}
 
-	public int getStrike() {
+	public static String getWeapon() {
+		return weapon;
+	}
+
+	public static void setWeapon(String weapon) {
+		UserState.weapon = weapon;
+	}
+
+	public static int getStrike() {
 		return strike;
 	}
 
-	public void setStrike(int strike) {
-		this.strike = strike;
+	public static void setStrike(int strike) {
+		UserState.strike = strike;
 	}
 
-	public double getTreeHeight() {
+	public static double getTreeHeight() {
 		return treeHeight;
 	}
 
-	public void setTreeHeight(double treeHeight) {
-		this.treeHeight = treeHeight;
+	public static void setTreeHeight(double treeHeight) {
+		UserState.treeHeight = treeHeight;
 	}
 
-	public double getGrowthrate() {
+	public static double getGrowthrate() {
 		return growthrate;
 	}
 
-	public void setGrowthrate(double growthrate) {
-		this.growthrate = growthrate;
+	public static void setGrowthrate(double growthrate) {
+		UserState.growthrate = growthrate;
 	}
 
 	@Override
 	public String toString() {
-		return "UserState [hp=" + hp + ", gold=" + gold 
-				+ ", weapon=" + weapon + ", strike=" + strike 
-				+ ", treeHeight=" + treeHeight + ", "
-				+ "growthrate=" + growthrate + "]";
+		return "UserState [hp=" + hp + ", gold=" + gold + ", weapon=" + weapon + ", strike=" + strike + ", treeHeight="
+				+ treeHeight + ", " + "growthrate=" + growthrate + "]";
 	}
-	
-	
 
 }
