@@ -20,10 +20,8 @@ public class GameView {
 	private Hero signUpUser;
 
 	public static Hero loginUser = null;
-
-	Hero me = new Hero();
 	Woodcutter enemy = new Woodcutter();
-	Tree tree = new Tree();
+	public static Tree tree = new Tree();
 	public static Item item;
 	int day = 0;
 	
@@ -123,20 +121,20 @@ public class GameView {
 		
 
 		System.out.println("[나무꾼을 이겨라!]");
-		while(me.getHp() >= 0 && enemy.getHp() >= 0) {
+		while(signUpUser.getHp() >= 0 && enemy.getHp() >= 0) {
 			
 			int input = -1;
 			do {
 				System.out.printf("%4s : "," 잭");
 				
-				for(int i = 0; i < me.getHp()/10 ; i ++) {
+				for(int i = 0; i < signUpUser.getHp()/10 ; i ++) {
 					System.out.print("♣");
 				}
-				for(int i = 0; i < 10 - (me.getHp()/10) ; i ++) {
+				for(int i = 0; i < 10 - (signUpUser.getHp()/10) ; i ++) {
 					System.out.print("♧");
 				}
 				
-				System.out.printf("(%d/100)", me.getHp());
+				System.out.printf("(%d/100)", signUpUser.getHp());
 				
 				
 				System.out.println();
@@ -185,30 +183,30 @@ public class GameView {
 				}
 
 				System.out.println();
-			} while (me.getHp() >= 0 && enemy.getHp() >= 0);
+			} while (signUpUser.getHp() >= 0 && enemy.getHp() >= 0);
 			
 
 		}
 		
-		if(me.getHp() >= 0) {
+		if(signUpUser.getHp() >= 0) {
 			System.out.println("[나무꾼이 쓰러졌습니다. 100골드를 획득했습니다.]");
-			me.setGold(me.getGold() + 100);
-			System.out.printf("총 골드 : %d", me.getGold() );
-			me.setHp(100);
+			signUpUser.setGold(signUpUser.getGold() + 100);
+			System.out.printf("총 골드 : %d", signUpUser.getGold() );
+			signUpUser.setHp(100);
 			enemy.setHp(100);
 			
-		}else if (me.getHp() == -1000) {
+		}else if (signUpUser.getHp() == -1000) {
 			System.out.println("[나무꾼에게 도망쳤습니다. 나무꾼이 콩나무를 베어갑니다.]");
 			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/10);
 			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/10);
-			me.setHp(100);
+			signUpUser.setHp(100);
 			enemy.setHp(100);
 		
 		}else { 
 			System.out.println("[나무꾼에게 졌습니다. 나무꾼이 콩나무를 베어갑니다.]");
 			tree.setTreeHeight(tree.getTreeHeight() - tree.getTreeHeight()/5);
 			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", tree.getTreeHeight(), tree.getTreeHeight()/5);
-			me.setHp(100);
+			signUpUser.setHp(100);
 			enemy.setHp(100);
 		}
 		
@@ -218,14 +216,14 @@ public class GameView {
 	/// 전투 액션 3개
 	
 	private void attack() {
-		int damage = (random.nextInt(me.getStrike()) + 2);
+		int damage = (random.nextInt(signUpUser.getStrike()) + 2);
 		int damaged = (random.nextInt(enemy.getStrike()) + 1);
 		
-		me.setHp(me.getHp()- damaged);
+		signUpUser.setHp(signUpUser.getHp()- damaged);
 		enemy.setHp(enemy.getHp() - damage);
 		
 		
-		System.out.printf("잭이 %s로 %d의 데미지를 주었습니다\n", me.getWeapon() , damage);
+		System.out.printf("잭이 %s로 %d의 데미지를 주었습니다\n", signUpUser.getWeapon() , damage);
 		System.out.printf("나무꾼의 공격으로 %d의 데미지를 입었습니다", damaged);
 		
 	}
@@ -233,11 +231,11 @@ public class GameView {
 
 	private void healing() {
 		
-		int healing = random.nextInt(me.getStrike() / 2) + 1;
+		int healing = random.nextInt(signUpUser.getStrike() / 2) + 1;
 		int damaged = random.nextInt(enemy.getStrike()) + 1;
 		
-		me.setHp(me.getHp() + healing);
-		me.setHp(me.getHp() - damaged);
+		signUpUser.setHp(signUpUser.getHp() + healing);
+		signUpUser.setHp(signUpUser.getHp() - damaged);
 		
 		System.out.printf("잭은 방어를 하여 %d를 회복하였습니다.\n", healing);
 		System.out.printf("나무꾼의 공격으로 %d의 데미지를 입었습니다.", damaged);
@@ -247,7 +245,7 @@ public class GameView {
 	
 	private void run() {
 		
-		me.setHp(-1000);
+		signUpUser.setHp(-1000);
 		
 
 	}
@@ -519,7 +517,7 @@ public class GameView {
 		}
 	}
 
-	}
+
 	
     private void display() {
     	System.out.println("정보 확인");
