@@ -1,6 +1,26 @@
 package game.image;
 
 public class GameUI {
+	
+	public static void clearConsoleE() {
+	    for(int i = 0; i < 35; i++) {
+	    	System.out.println();
+	    }
+	}
+	
+	public static void clearConsole() {
+	    try {
+	        if (System.getProperty("os.name").contains("Windows")) {
+	            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+	        } else {
+	            System.out.print("\033[H\033[2J");
+	            System.out.flush();
+	        }
+	    } catch (Exception e) {
+	        System.out.println("콘솔을 지우는 동안 오류가 발생했습니다.");
+	    }
+	}
+	
 	public static void gameMenu1() {
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@$---~@@@@@@@@@@@@@@@@@@@@@@@@@@");
@@ -100,7 +120,7 @@ public class GameUI {
 		System.out.println("@@@@@@-...@*~@.-@-;!,@#-@!--$@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@....@-*@;!-~@@~-@$---@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@!...:@-@@~-~@--@;.--:@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@#...@=-@-----@-.,-*@=================");
+		System.out.println("@@@@@@@@#...@=-@-----@-.,-*@@================");
 		System.out.println("@@@@@@@@@@@:.@-----:@$.@@@@@@= 1. 나무 돌보기    ");
 		System.out.println("@@@@@@@@@@@@@@@----@@@@@@@@@@= 2. 나무꾼을 이겨라 ");
 		System.out.println("@@@@@@@@@@@@@@@$---@@@@@@@@@@= 3. 상점         ");

@@ -25,6 +25,7 @@ public class GameMenu2 {
 		ui.newStartUi();
 		
 		sc.nextLine();
+		GameUI.clearConsoleE();
 		
 		int input = -1;
 		do {
@@ -33,7 +34,8 @@ public class GameMenu2 {
 				GameUI.gameMenu2();
 				
 				input = sc.nextInt();
-
+				GameUI.clearConsoleE();
+				
 				System.out.println();
 
 				switch (input) {
