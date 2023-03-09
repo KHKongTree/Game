@@ -4,12 +4,13 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import game.dto.UserState;
+import game.image.GameUI;
 import game.view.action.Battle;
 
 public class GameMenu1 {
 
 	Scanner sc = new Scanner(System.in);
-	
+	GameUI ui = new GameUI();
 	GameMenu2 start = new GameMenu2();
 	
 	public void menu() {
@@ -22,12 +23,9 @@ public class GameMenu1 {
 							);
 		do {
 			try {
-				System.out.println("1. 새 이야기");
-				System.out.println("2. 했던 이야기 들어보기");
 				
-				System.out.println("0. 프로그램 종료");
+				GameUI.gameMenu1();
 				
-				System.out.print("메뉴 선택 : ");
 				input = sc.nextInt();
 				
 				System.out.println();
