@@ -3,6 +3,7 @@ package game.image;
 import game.dto.UserState;
 import game.service.BattleService;
 import game.service.StorerItemService;
+import game.service.TreeActionService;
 
 public class GameUI {
 	
@@ -75,7 +76,7 @@ public class GameUI {
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		System.out.println("@===========================================@");
 		System.out.println("@=                                         =@");
-		System.out.println("@=             [♣Kong Tree♣]               =@");
+		System.out.println("@=             [♣콩나무 키우기♣]               =@");
 		System.out.println("@=                                         =@");
 		System.out.println("@= 잭에겐 어머니의 유품인 씨앗 하나가 있었고,          =@");
 		System.out.println("@=                                         =@");
@@ -162,18 +163,18 @@ public class GameUI {
 		System.out.println("@@##  #   ~=##@@@@@@@##=~   #  ##@@@@@@@@@@@@");
 		System.out.println("@@@#- ;#.   -$#$@@@$#$-   .#; -#@@@@@@@@@@@@@");
 		System.out.println("@@@#-  ,##    ##@@@##    ##,  -#@@@@@@@@@@@@@");
-		System.out.println("@@@##    ,#    #$@##    #,    #$@@@@@@@@@@@@@");
-		System.out.println("@@@@@#*         =#@#=         *#@@@@@@@@@@@@@");
-		System.out.println("@@@@@@#=.       =#@#=       .=#@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@#$-      =#@#=      -$#@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@##.     =#@#=     .##@@==============");
-		System.out.println("@@@@@@@@@#$     =#@#=     $#@@@=  [돌보기 메뉴] ");
-		System.out.println("@@@@@@@@@$#     =#@#=     #$@@@= 1. 물주기     ");
-		System.out.println("@@@@@@@@@##;;;;;$#@#$;;;;;##@@@= 2. 가지치기   ");
-		System.out.println("@@@@@@@@@#!;;;;;;#@#;;;;;;!#@@@= 3. 아이템 사용 ");
-		System.out.println("@@@@@@@@@#,      #@#      ,#@@@=            ");
-		System.out.println("@@@@@@@@@#,      #@#      ,#@@@= 0. 나가기    ");
-		System.out.println("@@@@@@@@@#,      #@#      ,#@@@==============");
+		System.out.println("@@@##    ,#    #$@##    #,    #==============");
+		System.out.println("@@@@@#*         =#@#=         *= [돌보기 메뉴] ");
+		System.out.println("@@@@@@#=.       =#@#=       .=#= 1. 물주기    ");
+		System.out.println("@@@@@@@#$-      =#@#=      -$#@= 2. 가지치기   ");
+		System.out.println("@@@@@@@@##.     =#@#=     .##@@= 3. 아이템사용  ");
+		System.out.println("@@@@@@@@@#$     =#@#=     $#@@@=            ");
+		System.out.println("@@@@@@@@@$#     =#@#=     #$@@@= 0. 나가기    ");
+		System.out.println("-------------------------------==============");
+		 System.out.printf(" %s\n",TreeActionService.str1);
+		 System.out.printf(" %s\n",TreeActionService.str2);
+		 System.out.printf(" %s\n",TreeActionService.str3);
+		System.out.println("-------------------------------==============");
 		System.out.println("@@@@@@@@@#########@#########@@@=   행동입력    ");
 		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
 
@@ -323,9 +324,9 @@ public class GameUI {
 		System.out.println("@=   !@.@@     #@.@#     @@.@!   =            ");
 		System.out.println("@=  .@=.;@-    @!.!@    -@;.=@   = 0. 나가기    ");
 		System.out.println("---------------------------------=============");
-		System.out.println("                                              ");
-		System.out.println("                                              ");
-		System.out.println("                                              ");
+		 System.out.printf(" %s\n", TreeActionService.str1);
+		 System.out.printf(" %s\n", TreeActionService.str2);
+		 System.out.printf(" %s\n", TreeActionService.str3);
 		System.out.println("---------------------------------=============");
 		System.out.println("@@==@#====@===@$===$@===@====#@=== 사용할 아이템은?");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=    >>");

@@ -23,7 +23,9 @@ public class TreeCare {
 
 		do {
 			GameUI.treeCare();
-			
+			TreeActionService.str1 = "";
+			TreeActionService.str2 = "";
+			TreeActionService.str3 = "";
 			input = sc.nextInt();
 			
 			System.out.println();
