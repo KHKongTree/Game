@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import game.dto.UserState;
-import game.image.GameUI;
 
 public class Display {
 	Scanner sc = new Scanner(System.in);
@@ -44,7 +43,7 @@ public class Display {
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@= 입력후 Enter  ");
 		System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
 
-		Scanner sc = new Scanner(System.in);
+		
 		int input1 = -1;
 		do {
 			try {

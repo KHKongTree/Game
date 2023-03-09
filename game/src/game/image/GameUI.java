@@ -1,11 +1,8 @@
 package game.image;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 import game.dto.UserState;
 import game.service.BattleService;
-import game.service.UserItemService;
+import game.service.StorerItemService;
 
 public class GameUI {
 	
@@ -17,32 +14,6 @@ public class GameUI {
 		}
 	}
 	
-	public static void pause() {
-		try (Scanner sc = new Scanner(System.in)) {
-			int input = -1;
-			do {
-				try {
-					sc.nextInt();
-					switch (input) {
-					case 1:
-						break;
-					case 2:
-						break;
-					case 0:
-						break;
-					default:
-						break;
-					}
-				} catch (InputMismatchException e) {
-					System.out.println("[잘못된 형식의 입력입니다.]");
-					sc.nextLine(); // 입력 버퍼에 잘못 입력된 내용 제거
-					input = -1; // 반복문이 종료 되는 것을 방지
-				}
-				System.out.println();
-			} while (input != -1);
-		}
-	
-	}
 
 	public static void clearConsole() {
 		try {
@@ -315,9 +286,51 @@ public class GameUI {
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@==============");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   소유 골드    ");
 		 System.out.printf("-------------------------------=  %d\n",UserState.getGold());
-		 System.out.printf("       %s\n", UserItemService.str);
+		 System.out.printf("       %s\n", StorerItemService.str);
 		System.out.println("-------------------------------=   메뉴 선택    ");
 		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
 	}
+	
+	
+	public static void treeCareItem() {
 
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@===============================@@@@@@@@@@@@@");
+		System.out.println("@=    ...       ...       ...    =@@@@@@@@@@@@");
+		System.out.println("@=   !@@@#     $@@@$     #@@@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@~@@     #@~@#     @@~@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=  *@,.-@=   #@,.,@#   =@-.,@*  =@@@@@@@@@@@@");
+		System.out.println("@=  =!...;@   @;...;@   @;...!=  =@@@@@@@@@@@@");
+		System.out.println("@=  =;....@   @-...-@   @....;=  =@@@@@@@@@@@@");
+		System.out.println("@=  =*::::@   @;:::;@   @::::*=  =@@@@@@@@@@@@");
+		System.out.println("@=  =#$$$$@   @$$$$$@   @$$$$#=  =@@@@@@@@@@@@");
+		System.out.println("@=  =:    @   @,   ,@   @    :=  =@@@@@@@@@@@@");
+		System.out.println("@@##@#$$$$@###@#$$$#@###@$$$$#@##@@@@@@@@@@@@@");
+		System.out.println("@#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#@@@@@@@@@@@@");
+		System.out.println("@$                               $@@@@@@@@@@@@");
+		System.out.println("@#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#@@@@@@@@@@@@");
+		System.out.println("@@###############################@@@@@@@@@@@@@");
+		System.out.println("@=                               =@@@@@@@@@@@@");
+		System.out.println("@=   ;$$$~     !$$$!     ~$$$;   =============");
+		System.out.println("@=   !@:@@     #@:@#     @@:@!   = [아이템 메뉴] ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   = 1. 비료     ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   = 2. 물약     ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   = 3. 해충제    ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =            ");
+		System.out.println("@=  .@=.;@-    @!.!@    -@;.=@   = 0. 나가기    ");
+		System.out.println("---------------------------------=============");
+		System.out.println("                                              ");
+		System.out.println("                                              ");
+		System.out.println("                                              ");
+		System.out.println("---------------------------------=============");
+		System.out.println("@@==@#====@===@$===$@===@====#@=== 사용할 아이템은?");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=    >>");
+	}
+	
+	
+	
 }

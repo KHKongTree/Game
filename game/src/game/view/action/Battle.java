@@ -10,7 +10,7 @@ import game.image.GameUI;
 import game.service.BattleService;
 
 public class Battle {
-
+	
 	BattleService battle = new BattleService();
 
 	Scanner sc = new Scanner(System.in);
@@ -59,7 +59,7 @@ public class Battle {
 				
 		BattleService.str1 = "";
 		BattleService.str2 = "";
-		Scanner sc = new Scanner(System.in);
+		
 		
 		int input1 = -1;
 		do {

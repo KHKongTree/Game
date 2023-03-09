@@ -34,7 +34,7 @@ public class TreeActionService {
 
 		if (Item.getFertiliserCount() > 0) {
 			Item.setFertiliserCount(Item.getFertiliserCount() - 1);
-			UserState.setTreeHeight(tree.getTreeHeight() + 10);
+			UserState.setTreeHeight(UserState.getTreeHeight() + 10);
 			System.out.printf("나무가 10m 자라 %fm가 되었습니다. ", UserState.getTreeHeight());
 		} else {
 			System.out.println("비료가 없습니다.");
