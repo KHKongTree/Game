@@ -1,8 +1,6 @@
 package game.dto;
 
-import java.io.Serializable;
-
-public class UserState implements Serializable {
+public class UserState{
 
 	private static String userName = "잭";
 	private static int hp = 100; // 체력
@@ -31,7 +29,7 @@ public class UserState implements Serializable {
 		return hp;
 	}
 
-	public void setHp(int hp) {
+	public static void setHp(int hp) {
 		UserState.hp = hp;
 	}
 
