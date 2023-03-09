@@ -22,6 +22,7 @@ public class TreeCare {
 		int input = 0;
 
 		do {
+			GameUI.clearConsoleE();
 			GameUI.treeCare();
 			TreeActionService.str1 = "";
 			TreeActionService.str2 = "";

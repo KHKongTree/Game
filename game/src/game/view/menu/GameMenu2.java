@@ -28,10 +28,10 @@ public class GameMenu2 {
 		int input = -1;
 		do {
 			try {
+				GameUI.clearConsoleE();
 				GameUI.gameMenu2();
 				
 				input = sc.nextInt();
-				GameUI.clearConsoleE();
 				
 				System.out.println();
 

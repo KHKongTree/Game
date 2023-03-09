@@ -6,17 +6,17 @@ public class Woodcutter {
 	private static int Strike = 5;
 
 	
-	public int getHp() {
+	public static int getHp() {
 		return hp;
 	}
 
 	public static void setHp(int hp) {
 		Woodcutter.hp = hp;
 	}
-	public int getStrike() {
+	public static int getStrike() {
 		return Strike;
 	}
-	public void setStrike(int striking) {
+	public static void setStrike(int striking) {
 		Strike = striking;
 	}
 	

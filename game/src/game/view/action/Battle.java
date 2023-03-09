@@ -25,6 +25,7 @@ public class Battle {
 		int input = -1;
 		do {
 			try {
+				GameUI.clearConsoleE();
 				BattleService.stateHP();
 				GameUI.battle();
 				input = sc.nextInt();
@@ -35,13 +36,16 @@ public class Battle {
 				case 1:
 					BattleService.attack();
 					BattleService.stateHP();
+					GameUI.clearConsoleE();
 					break;
 				case 2:
 					BattleService.healing();
 					BattleService.stateHP();
+					GameUI.clearConsoleE();
 					break;
 				case 3:
 					BattleService.run();
+					GameUI.clearConsoleE();
 					break;
 				default:
 					System.out.println("잘못 입력 하셨습니다.");
@@ -53,7 +57,7 @@ public class Battle {
 			}
 			System.out.println();
 			
-		} while (UserState.getHp() >= 0 && enemy.getHp() >= 0);
+		} while (UserState.getHp() >= 0 && Woodcutter.getHp() >= 0);
 		BattleService.result();
 		GameUI.battleResult();
 				

@@ -11,7 +11,7 @@ public class Store {
 	Scanner sc = new Scanner(System.in);
 	
 	public void menu() {
-
+		GameUI.clearConsoleE();
 		
 		Item item = new Item();
 

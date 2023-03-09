@@ -4,12 +4,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import game.dto.UserState;
+import game.image.GameUI;
 
 public class Display {
 	Scanner sc = new Scanner(System.in);
 	UserState me = new UserState();
 
 	public void display() {
+		GameUI.clearConsoleE();
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");

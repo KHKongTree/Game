@@ -24,7 +24,9 @@ public class GameMenu1 {
 				
 				switch (input) {
 				case 1:
+					GameUI.clearConsoleE();
 					start.menu();
+					GameUI.clearConsoleE();
 					break;
 				case 2:
 					break;

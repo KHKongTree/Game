@@ -18,12 +18,8 @@ public class GameUI {
 
 	public static void clearConsole() {
 		try {
-			if (System.getProperty("os.name").contains("Windows")) {
-				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-			} else {
 				System.out.print("\033[H\033[2J");
 				System.out.flush();
-			}
 		} catch (Exception e) {
 			System.out.println("콘솔을 지우는 동안 오류가 발생했습니다.");
 		}
