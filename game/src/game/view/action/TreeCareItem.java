@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import game.dto.UserState;
+import game.image.GameUI;
 import game.service.TreeActionService;
 
 public class TreeCareItem {
@@ -20,15 +21,9 @@ public class TreeCareItem {
 		int input = 0;
 
 		do {
-			System.out.println("[아이템 메뉴]");
-			System.out.println("1. 비료");
-			System.out.println("2. 물약");
-			System.out.println("3. 해충제");
-			System.out.println("0. 나가기");
-
-			System.out.println();
-
-			System.out.print("아이템 메뉴를 선택해주세요. : ");
+			
+			GameUI.treeCareItem();
+			
 			input = sc.nextInt();
 
 			System.out.println();

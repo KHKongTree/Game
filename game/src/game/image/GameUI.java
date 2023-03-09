@@ -1,23 +1,19 @@
 package game.image;
 
-import java.io.IOException;
-
+import game.dto.UserState;
 import game.service.BattleService;
-import game.view.action.Battle;
+import game.service.StorerItemService;
 
 public class GameUI {
-
+	
 	BattleService battlesub = new BattleService();
-
+	
 	public static void clearConsoleE() {
 		for (int i = 0; i < 35; i++) {
 			System.out.println();
 		}
 	}
 	
-	public static void pause() {
-		
-	  }
 
 	public static void clearConsole() {
 		try {
@@ -44,7 +40,7 @@ public class GameUI {
 		System.out.println("=##   # #  ###  # #        #   ##   ##   ## =");
 		System.out.println("=# #  # #  ###  # #        #   # #  #    #  =");
 		System.out.println("=# #   #   # #   ##        #   # #  ###  ###=");
-		System.out.println("=================[♣Kong Tree♣]===============");
+		System.out.println("==============[♣Kong Tree♣]==================");
 		System.out.println("@@@*........................----@@@@@@@@@@@@@");
 		System.out.println("@@@@.........................---@@@@@@@@@@@@@");
 		System.out.println("@@@..........................---!@@@@@@@@@@@@");
@@ -138,7 +134,7 @@ public class GameUI {
 		System.out.println("@@@@@@@@@@@@@@@!---@@@@@@@@@@= 4. 내정보 확인    ");
 		System.out.println("@@@@@@@@@@@@@@@----@@@@@@@@@@=               ");
 		System.out.println("@@@@@@@@@@@@@@@----#@@@@@@@@@=               ");
-		System.out.println("@@@@@@@@@@@@@@@----~@@@@@@@@@= 0. 끝내기       ");
+		System.out.println("@@@@@@@@@@@@@@@----~@@@@@@@@@= 0. 메뉴로 나가기  ");
 		System.out.println("@@@@@@@@@@@@@@#-----@@@@@@@@@================");
 		System.out.println("@@@@@@@@@@@@@@:-----@@@@@@@@@=    행동입력     ");
 		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=     >>");
@@ -257,6 +253,84 @@ public class GameUI {
 		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
 	}
 	
-	
 
+	public static void store() {
+
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@===========================================@");
+		System.out.println("@=                                         =@");
+		System.out.println("@=                [상  점]                  =@");
+		System.out.println("@=                                         =@");
+		System.out.println("@= 1. 동도끼 (100G)                          =@");
+		System.out.println("@= 2. 은도끼 (200G)                          =@");
+		System.out.println("@= 3. 금도끼 (300G)                          =@");
+		System.out.println("@= 4. 비료 (50G)                            =@");
+		System.out.println("@= 5. 물약 (100G)                            =@");
+		System.out.println("@= 6. 해충제 (80G)                           =@");
+		System.out.println("@= 7. 가위 (20G)                            =@");
+		System.out.println("@=                                         =@");
+		System.out.println("@= 0. 상점 나가기                             =@");
+		System.out.println("@=                                         =@");
+		System.out.println("@===========================================@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@==============");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   소유 골드    ");
+		 System.out.printf("-------------------------------=  %d\n",UserState.getGold());
+		 System.out.printf("       %s\n", StorerItemService.str);
+		System.out.println("-------------------------------=   메뉴 선택    ");
+		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
+	}
+	
+	
+	public static void treeCareItem() {
+
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@===============================@@@@@@@@@@@@@");
+		System.out.println("@=    ...       ...       ...    =@@@@@@@@@@@@");
+		System.out.println("@=   !@@@#     $@@@$     #@@@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@~@@     #@~@#     @@~@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =@@@@@@@@@@@@");
+		System.out.println("@=  *@,.-@=   #@,.,@#   =@-.,@*  =@@@@@@@@@@@@");
+		System.out.println("@=  =!...;@   @;...;@   @;...!=  =@@@@@@@@@@@@");
+		System.out.println("@=  =;....@   @-...-@   @....;=  =@@@@@@@@@@@@");
+		System.out.println("@=  =*::::@   @;:::;@   @::::*=  =@@@@@@@@@@@@");
+		System.out.println("@=  =#$$$$@   @$$$$$@   @$$$$#=  =@@@@@@@@@@@@");
+		System.out.println("@=  =:    @   @,   ,@   @    :=  =@@@@@@@@@@@@");
+		System.out.println("@@##@#$$$$@###@#$$$#@###@$$$$#@##@@@@@@@@@@@@@");
+		System.out.println("@#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#@@@@@@@@@@@@");
+		System.out.println("@$                               $@@@@@@@@@@@@");
+		System.out.println("@#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#@@@@@@@@@@@@");
+		System.out.println("@@###############################@@@@@@@@@@@@@");
+		System.out.println("@=                               =@@@@@@@@@@@@");
+		System.out.println("@=   ;$$$~     !$$$!     ~$$$;   =============");
+		System.out.println("@=   !@:@@     #@:@#     @@:@!   = [아이템 메뉴] ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   = 1. 비료     ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   = 2. 물약     ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   = 3. 해충제    ");
+		System.out.println("@=   !@.@@     #@.@#     @@.@!   =            ");
+		System.out.println("@=  .@=.;@-    @!.!@    -@;.=@   = 0. 나가기    ");
+		System.out.println("---------------------------------=============");
+		System.out.println("                                              ");
+		System.out.println("                                              ");
+		System.out.println("                                              ");
+		System.out.println("---------------------------------=============");
+		System.out.println("@@==@#====@===@$===$@===@====#@=== 사용할 아이템은?");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=    >>");
+	}
+	
+	
+	
 }

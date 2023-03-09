@@ -22,11 +22,9 @@ public class GameMenu2 {
 	
 	public void menu() {
 		
-		ui.newStartUi();
-		
+		GameUI.newStartUi();
 		sc.nextLine();
 		GameUI.clearConsoleE();
-		
 		int input = -1;
 		do {
 			try {
@@ -40,15 +38,19 @@ public class GameMenu2 {
 				switch (input) {
 				case 1:
 					care.Menu();
+					GameUI.clearConsoleE();
 					break;
 				case 2:
 					battle.menu();
+					GameUI.clearConsoleE();
 					break;
 				case 3:
 					store.menu();
+					GameUI.clearConsoleE();
 					break;
 				case 4:
 					info.display();
+					GameUI.clearConsoleE();
 					break;
 				case 0:
 					System.out.println("프로그램을 종료합니다.");

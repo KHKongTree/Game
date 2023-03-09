@@ -39,10 +39,8 @@ public class TreeCare {
 				useItem.menu();
 				break;
 			case 0:
-				System.out.println("나무 돌보기를 나갑니다.");
 				break;
-			default:
-				System.out.println("잘못 입력 하셨습니다.");
+			default: break;
 			}
 			System.out.println();
 		} while (input != 0);
