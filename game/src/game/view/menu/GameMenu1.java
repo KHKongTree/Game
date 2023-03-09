@@ -29,7 +29,6 @@ public class GameMenu1 {
 				case 2:
 					break;
 				case 0:
-					System.out.println("프로그램을 종료합니다.");
 					break;
 				default:
 					System.out.println("잘못 입력 하셨습니다.");

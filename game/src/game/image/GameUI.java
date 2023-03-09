@@ -1,14 +1,16 @@
 package game.image;
 
-import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
+import game.dto.UserState;
 import game.service.BattleService;
-import game.view.action.Battle;
+import game.service.UserItemService;
 
 public class GameUI {
-
+	
 	BattleService battlesub = new BattleService();
-
+	
 	public static void clearConsoleE() {
 		for (int i = 0; i < 35; i++) {
 			System.out.println();
@@ -16,8 +18,31 @@ public class GameUI {
 	}
 	
 	public static void pause() {
-		
-	  }
+		try (Scanner sc = new Scanner(System.in)) {
+			int input = -1;
+			do {
+				try {
+					sc.nextInt();
+					switch (input) {
+					case 1:
+						break;
+					case 2:
+						break;
+					case 0:
+						break;
+					default:
+						break;
+					}
+				} catch (InputMismatchException e) {
+					System.out.println("[잘못된 형식의 입력입니다.]");
+					sc.nextLine(); // 입력 버퍼에 잘못 입력된 내용 제거
+					input = -1; // 반복문이 종료 되는 것을 방지
+				}
+				System.out.println();
+			} while (input != -1);
+		}
+	
+	}
 
 	public static void clearConsole() {
 		try {
@@ -44,7 +69,7 @@ public class GameUI {
 		System.out.println("=##   # #  ###  # #        #   ##   ##   ## =");
 		System.out.println("=# #  # #  ###  # #        #   # #  #    #  =");
 		System.out.println("=# #   #   # #   ##        #   # #  ###  ###=");
-		System.out.println("=================[♣Kong Tree♣]===============");
+		System.out.println("==============[♣Kong Tree♣]==================");
 		System.out.println("@@@*........................----@@@@@@@@@@@@@");
 		System.out.println("@@@@.........................---@@@@@@@@@@@@@");
 		System.out.println("@@@..........................---!@@@@@@@@@@@@");
@@ -138,7 +163,7 @@ public class GameUI {
 		System.out.println("@@@@@@@@@@@@@@@!---@@@@@@@@@@= 4. 내정보 확인    ");
 		System.out.println("@@@@@@@@@@@@@@@----@@@@@@@@@@=               ");
 		System.out.println("@@@@@@@@@@@@@@@----#@@@@@@@@@=               ");
-		System.out.println("@@@@@@@@@@@@@@@----~@@@@@@@@@= 0. 끝내기       ");
+		System.out.println("@@@@@@@@@@@@@@@----~@@@@@@@@@= 0. 메뉴로 나가기  ");
 		System.out.println("@@@@@@@@@@@@@@#-----@@@@@@@@@================");
 		System.out.println("@@@@@@@@@@@@@@:-----@@@@@@@@@=    행동입력     ");
 		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=     >>");
@@ -257,6 +282,42 @@ public class GameUI {
 		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
 	}
 	
-	
+
+	public static void store() {
+
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@===========================================@");
+		System.out.println("@=                                         =@");
+		System.out.println("@=                [상  점]                  =@");
+		System.out.println("@=                                         =@");
+		System.out.println("@= 1. 동도끼 (100G)                          =@");
+		System.out.println("@= 2. 은도끼 (200G)                          =@");
+		System.out.println("@= 3. 금도끼 (300G)                          =@");
+		System.out.println("@= 4. 비료 (50G)                            =@");
+		System.out.println("@= 5. 물약 (100G)                            =@");
+		System.out.println("@= 6. 해충제 (80G)                           =@");
+		System.out.println("@= 7. 가위 (20G)                            =@");
+		System.out.println("@=                                         =@");
+		System.out.println("@= 0. 상점 나가기                             =@");
+		System.out.println("@=                                         =@");
+		System.out.println("@===========================================@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@==============");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   소유 골드    ");
+		 System.out.printf("-------------------------------=  %d\n",UserState.getGold());
+		 System.out.printf("       %s\n", UserItemService.str);
+		System.out.println("-------------------------------=   메뉴 선택    ");
+		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
+	}
 
 }

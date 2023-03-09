@@ -25,7 +25,7 @@ public class UserState{
 		UserState.userName = userName;
 	}
 
-	public int getHp() {
+	public static int getHp() {
 		return hp;
 	}
 

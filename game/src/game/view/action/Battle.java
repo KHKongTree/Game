@@ -25,7 +25,7 @@ public class Battle {
 		int input = -1;
 		do {
 			try {
-				battle.stateHP();
+				BattleService.stateHP();
 				GameUI.battle();
 				input = sc.nextInt();
 
@@ -33,15 +33,15 @@ public class Battle {
 
 				switch (input) {
 				case 1:
-					battle.attack();
-					battle.stateHP();
+					BattleService.attack();
+					BattleService.stateHP();
 					break;
 				case 2:
-					battle.healing();
-					battle.stateHP();
+					BattleService.healing();
+					BattleService.stateHP();
 					break;
 				case 3:
-					battle.run();
+					BattleService.run();
 					break;
 				default:
 					System.out.println("잘못 입력 하셨습니다.");
@@ -53,32 +53,36 @@ public class Battle {
 			}
 			System.out.println();
 			
-		} while (me.getHp() >= 0 && enemy.getHp() >= 0);
+		} while (UserState.getHp() >= 0 && enemy.getHp() >= 0);
 		BattleService.result();
 		GameUI.battleResult();
 				
 		BattleService.str1 = "";
 		BattleService.str2 = "";
-		input = -1;
+		Scanner sc = new Scanner(System.in);
+		
+		int input1 = -1;
 		do {
 			try {
 				sc.nextInt();
-				switch (input) {
+				switch (input1) {
 				case 1:
 					break;
 				case 2:
 					break;
 				case 0:
 					break;
-				default: break;
+				default:
+					break;
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("[잘못된 형식의 입력입니다.]");
 				sc.nextLine(); // 입력 버퍼에 잘못 입력된 내용 제거
-				input = -1; // 반복문이 종료 되는 것을 방지
+				input1 = -1; // 반복문이 종료 되는 것을 방지
 			}
 			System.out.println();
-		} while (input != -1);
+		} while (input1 != -1);
+
 	}
 		
 	
