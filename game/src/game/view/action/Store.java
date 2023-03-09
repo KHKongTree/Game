@@ -18,7 +18,8 @@ public class Store {
 		StorerItemService userItem = new StorerItemService();
 		int input = 0;
 		do {
-
+			GameUI.clearConsoleE();
+			
 			GameUI.store();
 			input = sc.nextInt();
 
