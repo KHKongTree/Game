@@ -73,4 +73,9 @@ public class GameService {
 	public void useItem() {
 
 	}
+
+	public double Tree(double treeHeight) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
