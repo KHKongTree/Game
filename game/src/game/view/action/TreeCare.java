@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import game.dto.UserState;
+import game.image.GameUI;
 import game.service.TreeActionService;
 
 public class TreeCare {
@@ -21,17 +22,10 @@ public class TreeCare {
 		int input = 0;
 
 		do {
-			System.out.println("[돌보기 메뉴]");
-			System.out.println("1. 물주기");
-			System.out.println("2. 가지치기");
-			System.out.println("3. 아이템 사용하기");
-			System.out.println("0. 나가기");
-
-			System.out.println();
-
-			System.out.print("돌보기 메뉴를 선택해주세요. : ");
+			GameUI.treeCare();
+			
 			input = sc.nextInt();
-
+			
 			System.out.println();
 
 			switch (input) {

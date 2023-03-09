@@ -3,9 +3,7 @@ package game.view.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import game.dto.UserState;
 import game.image.GameUI;
-import game.view.action.Battle;
 
 public class GameMenu1 {
 
@@ -21,7 +19,7 @@ public class GameMenu1 {
 				GameUI.gameMenu1();
 				
 				input = sc.nextInt();
-				GameUI.clearConsoleE();
+				
 				System.out.println();
 				
 				switch (input) {

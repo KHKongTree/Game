@@ -30,7 +30,6 @@ public class GameMenu2 {
 		int input = -1;
 		do {
 			try {
-				
 				GameUI.gameMenu2();
 				
 				input = sc.nextInt();
