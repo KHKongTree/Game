@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import game.view.action.TreeCare;
 import game.dto.UserState;
+import game.image.GameUI;
 import game.view.action.Battle;
 import game.view.action.Display;
 import game.view.action.Store;
@@ -17,22 +18,20 @@ public class GameMenu2 {
 	Battle battle = new Battle();
 	Store store = new Store();
 	Display info = new Display();
-	
+	GameUI ui = new GameUI();
 	
 	public void menu() {
+		
+		ui.newStartUi();
+		
+		sc.nextLine();
 		
 		int input = -1;
 		do {
 			try {
-				System.out.println("======♣Kong Tree♣======");
-				System.out.println("1. 나무 돌보기");
-				System.out.println("2. 나무꾼을 이겨라");
-				System.out.println("3. 상점");
-				System.out.println("4. 내 정보 확인");
-
-				System.out.println("0. 메인메뉴로");
-
-				System.out.print("메뉴 선택 : ");
+				
+				GameUI.gameMenu2();
+				
 				input = sc.nextInt();
 
 				System.out.println();

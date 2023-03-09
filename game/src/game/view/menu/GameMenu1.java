@@ -14,13 +14,7 @@ public class GameMenu1 {
 	GameMenu2 start = new GameMenu2();
 	
 	public void menu() {
-		
 		int input = -1;
-		System.out.println("      [♣Kong Tree♣]\n"
-							+ "잭에겐 어머니의 유품인 씨앗 하나가 있었고,\n" 
-							+ "심자마자 잭의 키를 넘길 만큼 커져버렸다.\n"
-							+ "소문을 들은 마을 사람들은 이 나무를 탐내게 되는데....\n"
-							);
 		do {
 			try {
 				
