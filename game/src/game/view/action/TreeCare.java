@@ -3,7 +3,6 @@ package game.view.action;
 import java.util.Random;
 import java.util.Scanner;
 
-import game.dto.UserState;
 import game.service.TreeActionService;
 
 public class TreeCare {
@@ -11,8 +10,6 @@ public class TreeCare {
 	Scanner sc = new Scanner(System.in);
 	Random random = new Random();
 
-	public static UserState me = new UserState();
-	public static UserState tree = new UserState();
 	public static TreeActionService action = new TreeActionService();
 
 	public static TreeCareItem useItem = new TreeCareItem();

@@ -49,14 +49,14 @@ public class GameUI {
 		System.out.println("@@@@@@@@#...@=-@-----@-.,-*@@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@:.@-----:@$.@@@@@@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@@----@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@@@$---@@@@@@@@@@@@==============");
-		System.out.println("@@@@@@@@@@@@@@@!---@@@@@@@@@@@@= 1. 새 이야기  ");
-		System.out.println("@@@@@@@@@@@@@@@----@@@@@@@@@@@@= 2. 이어하기   ");
-		System.out.println("@@@@@@@@@@@@@@@----#@@@@@@@@@@@=            ");
-		System.out.println("@@@@@@@@@@@@@@@----~@@@@@@@@@@@= 0. 끝내기    ");
-		System.out.println("@@@@@@@@@@@@@@#-----@@@@@@@@@@@==============");
-		System.out.println("@@@@@@@@@@@@@@:-----@@@@@@@@@@@=   메뉴입력    ");
-		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=   >>");
+		System.out.println("@@@@@@@@@@@@@@@$---@@@@@@====================");
+		System.out.println("@@@@@@@@@@@@@@@!---@@@@@@= 1. 새 이야기        ");
+		System.out.println("@@@@@@@@@@@@@@@----@@@@@@= 2. 이어하기         ");
+		System.out.println("@@@@@@@@@@@@@@@----#@@@@@=                   ");
+		System.out.println("@@@@@@@@@@@@@@@----~@@@@@= 0. 끝내기          ");
+		System.out.println("@@@@@@@@@@@@@@#-----@@@@@====================");
+		System.out.println("@@@@@@@@@@@@@@:-----@@@@@=   메뉴입력          ");
+		  System.out.print("@@@@@@@@@@@@@@@@@@@@@@@@@=   >>              ");
 	}
 
 	public void newStartUi() {
@@ -70,11 +70,11 @@ public class GameUI {
 		System.out.println("@=                                         =@");
 		System.out.println("@=             [♣Kong Tree♣]               =@");
 		System.out.println("@=                                         =@");
-		System.out.println("@= 잭에겐 어머니의 유품인 씨앗 하나가 있었고,          =@");
+		System.out.println("@= 잭에겐 어머니의 유품인 씨앗 하나가 있었고,       =@");
 		System.out.println("@=                                         =@");
-		System.out.println("@= 심자마자 잭의 키를 넘길 만큼 커져버렸다.           =@");
+		System.out.println("@= 심자마자 잭의 키를 넘길 만큼 커져버렸다.         =@");
 		System.out.println("@=                                         =@");
-		System.out.println("@= 소문을 들은 마을 사람들은 이 나무를 탐내게 되는데...  =@");
+		System.out.println("@= 소문을 들은 마을 사람들은 이 나무를 탐내게 되는데..=@");
 		System.out.println("@=                                         =@");
 		System.out.println("@===========================================@");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");

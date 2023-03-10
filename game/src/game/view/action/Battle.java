@@ -6,14 +6,15 @@ import java.util.Scanner;
 
 import game.dto.UserState;
 import game.dto.Woodcutter;
+import game.service.Service;
 
 public class Battle {
-	
+	Service service = new Service();  // Service 클래스 내 객체를 받아오기 위함
 	Scanner sc = new Scanner(System.in);
 	Random random = new Random();
 	// 외부 툴
 	
-	UserState me = new UserState();
+	UserState me = service.getMeAndTree();
 	Woodcutter enemy = new Woodcutter();
 	// 나와 적
 	
@@ -96,7 +97,7 @@ public class Battle {
 		}else if (me.getHp() == -1000) {
 			System.out.println("[나무꾼에게 도망쳤습니다. 나무꾼이 콩나무를 베어갑니다.]");
 			me.setTreeHeight(me.getTreeHeight() - me.getTreeHeight()/10);
-			System.out.printf("현재 콩나무 길이 : %.1f , 베어간 길이: %.2fm", me.getTreeHeight(), me.getTreeHeight()/10);
+			System.out.printf("현재 콩나무 길이 : %dm , 베어간 길이: %dm", me.getTreeHeight(), me.getTreeHeight()/10);
 			me.setHp(100);
 			enemy.setHp(100);
 		

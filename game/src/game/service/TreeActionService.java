@@ -3,65 +3,82 @@ package game.service;
 import game.dto.Item;
 import game.dto.UserState;
 
-public class TreeActionService {
+public class TreeActionService extends Service {  // Service 를 상속받아 객체 사용 가능 ex) meAndTree, item 등
 
-	public static UserState me = new UserState();
-	public static UserState tree = new UserState();
-	public static Item item = new Item();
-	
-	public void water() {
-		double a = UserState.getTreeHeight();
+	public void water() {  // 나무돌보기(TreeCare)에서 쓸 메서드
+		meAndTree.setTreeHeight(meAndTree.getTreeHeight()+(int)(20 * meAndTree.getGrowthrate())); // 가져온 나무키 + 20  
 
 		System.out.println("================================");
-		System.out.println("2.0L를 주었습니다.");
-		System.out.println("♣5.m가 자랐습니다!♣");
-		System.out.printf("나무의 키가 %f가 되었습니다.", a);
-
+		System.out.println("2L를 주었습니다.");
+		System.out.println("♣20m가 자랐습니다!♣");
+		System.out.printf("잭! 내 키가 %dm 자라서 %dm가 됐어!",
+				meAndTree.getTreeHeight(),meAndTree.getTreeHeight());
 	}
 
-	public void branchCut() {
-		if (Item.getScissorCount() > 0) { // 가위가 있을 떄
-			Item.setScissorCount(Item.getScissorCount() - 1); // 가위를 사용했을 때
-			UserState.setGrowthrate(1.0); // 나무 비율 초기화
-			System.out.println("가지치기 완료");
+	public void branchCut() {  // 나무돌보기(TreeCare)에서 쓸 메서드
+		if (item.getScissorCount() > 0) { // 가위가 있을 떄
+			item.setScissorCount(item.getScissorCount() - 1); // 가위를 사용했을 때
+			meAndTree.setGrowthrate(1.0); // 나무 비율 초기화-
+			System.out.println("지저분한 가지를 정리했습니다!!*^v^*");
 		} else {
-			System.out.println("가위가 없습니다.");
+			System.out.println("어? 가위가 없네? 가위 사줘!");
 		}
 
 	}
 
-	public void fertiliser() {
+	public void fertiliser() {  // 나무돌보기(TreeCare)에서 쓸 메서드
 
-		if (Item.getFertiliserCount() > 0) {
-			Item.setFertiliserCount(Item.getFertiliserCount() - 1);
-			UserState.setTreeHeight(tree.getTreeHeight() + 10);
-			System.out.printf("나무가 10m 자라 %fm가 되었습니다. ", UserState.getTreeHeight());
+		if (item.getFertiliserCount() > 0) {
+			item.setFertiliserCount(item.getFertiliserCount() - 1);
+			meAndTree.setTreeHeight(meAndTree.getTreeHeight() +(int)(10 * meAndTree.getGrowthrate()));
+			if(meAndTree.getGrowthrate() < 1) {
+				System.out.println("가지치기 할거지?");
+			} else if(meAndTree.getGrowthrate() <= 0.7) {
+				System.out.println("가지치기 언제해줄거야? 내 가지를 봐 많아지잖아...!");
+			} else if(meAndTree.getGrowthrate() <= 0.4){
+				System.out.println("가지가 너무 많아! 가지치기를 먼저 해줘!");
+			}
+			System.out.printf("잭! 내 키가 10m 자라서 %fm가 됐어! ", meAndTree.getTreeHeight());
 		} else {
-			System.out.println("비료가 없습니다.");
+			System.out.println("비료 어딨어? 비료 사야지!");
 		}
 
 	}
 
-	public void potion() {
+	public void potion() {  // 나무돌보기(TreeCare)에서 쓸 메서드
 
-		if (Item.getPotionCount() > 0) {
-			Item.setPotionCount(Item.getPotionCount() - 1);
-			UserState.setTreeHeight(UserState.getTreeHeight() + 50);
-			System.out.printf("나무가 50m 자라 %fm가 되었습니다. ", UserState.getTreeHeight());
+		if (item.getPotionCount() > 0) {
+			item.setPotionCount(item.getPotionCount() - 1);
+			meAndTree.setTreeHeight(meAndTree.getTreeHeight() + (int)(50 * meAndTree.getGrowthrate()));
+			if(meAndTree.getGrowthrate() < 1) {
+				System.out.println("가지치기 할거지?");
+			} else if(meAndTree.getGrowthrate() <= 0.7) {
+				System.out.println("가지치기 언제해줄거야? 내 가지를 봐 많아지잖아...!");
+			} else if(meAndTree.getGrowthrate() <= 0.4){
+				System.out.println("가지가 너무 많아! 가지치기를 먼저 해줘!");
+			}
+			System.out.printf("잭! 내 키가 50m 자라서 %dm가 됐어! ", meAndTree.getTreeHeight());
 		} else {
-			System.out.println("물약이 없습니다.");
+			System.out.println("물약이 있으면 빨리 자랄텐데.. 물약을 사러 가볼까?");
 		}
 
 	}
 
-	public void bugKiller() {
+	public void bugKiller() {  // 나무돌보기(TreeCare)에서 쓸 메서드
 
-		if (Item.getBugKillerCount() > 0) {
-			Item.setBugKillerCount(Item.getBugKillerCount() - 1);
-			UserState.setTreeHeight(UserState.getTreeHeight() + 30);
-			System.out.printf("나무가 30m 자라 %fm가 되었습니다. ", UserState.getTreeHeight());
+		if (item.getBugKillerCount() > 0) {
+			item.setBugKillerCount(item.getBugKillerCount() - 1);
+			meAndTree.setTreeHeight(meAndTree.getTreeHeight() + (int)(30 * meAndTree.getGrowthrate()));
+			if(meAndTree.getGrowthrate() < 1) {
+				System.out.println("가지치기 할거지?");
+			} else if(meAndTree.getGrowthrate() <= 0.7) {
+				System.out.println("가지치기 언제해줄거야? 내 가지를 봐 많아지잖아...!");
+			} else if(meAndTree.getGrowthrate() <= 0.4){
+				System.out.println("가지가 너무 많아! 가지치기를 먼저 해줘!");
+			}
+			System.out.printf("잭! 내 키가 30m 자라서 %fm가 됐어! ", meAndTree.getTreeHeight());
 		} else {
-			System.out.println("해충제가 없습니다.");
+			System.out.println("으악! 벌레가 너무 많아! 해충제가 필요할거같아 상점으로 가자!");
 		}
 
 	}

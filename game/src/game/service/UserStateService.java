@@ -1,17 +1,13 @@
 package game.service;
 
-import game.dto.UserState;
-
-public class UserStateService {
+public class UserStateService extends Service{  // Service 를 상속받아 객체 사용 가능 ex) meAndTree, item 등
 	
-	UserState me = new UserState();
-	
-	public static boolean buyWeapon(String weapon, int price, int exStrike) {
+	public boolean buyWeapon(String weapon, int price, int exStrike) {  // 상점(Store)에서 쓸 메서드
 
-		if (UserState.getGold() >= price) {
-			UserState.setWeapon(weapon);
-			UserState.setGold(UserState.getGold() - price);
-			UserState.setStrike(exStrike);
+		if (meAndTree.getGold() >= price) {
+			meAndTree.setWeapon(weapon);
+			meAndTree.setGold(meAndTree.getGold() - price);
+			meAndTree.setStrike(exStrike);
 			return true;
 		} else {
 			return false;
@@ -19,10 +15,10 @@ public class UserStateService {
 
 	}
 
-	public static boolean buyItem(int price) {
+	public boolean buyItem(int price) {   // 상점(Store)에서 쓸 메서드
 
-		if (UserState.getGold() >= price) {
-			UserState.setGold(UserState.getGold() - price);
+		if (meAndTree.getGold() >= price) {
+			meAndTree.setGold(meAndTree.getGold() - price);
 			return true;
 		} else {
 			return false;

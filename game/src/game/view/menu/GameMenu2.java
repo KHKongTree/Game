@@ -3,22 +3,27 @@ package game.view.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import game.view.action.TreeCare;
+import game.dto.Item;
 import game.dto.UserState;
 import game.image.GameUI;
+import game.service.Service;
 import game.view.action.Battle;
 import game.view.action.Display;
 import game.view.action.Store;
+import game.view.action.TreeCare;
 
 public class GameMenu2 {
 
+	Service service = new Service();
 	Scanner sc = new Scanner(System.in);
-	UserState me = new UserState();
-	TreeCare care = new TreeCare();
+	UserState meAndTree = service.getMeAndTree();
+	Item item = service.getItem();
+	TreeCare care = service.getCare();
 	Battle battle = new Battle();
 	Store store = new Store();
 	Display info = new Display();
-	GameUI ui = new GameUI();
+	GameUI ui = service.getUi();
+	
 	
 	public void menu() {
 		
