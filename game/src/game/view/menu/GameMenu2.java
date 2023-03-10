@@ -57,7 +57,6 @@ public class GameMenu2 {
 					info.display();
 					break;
 				case 0:
-					System.out.println("프로그램을 종료합니다.");
 					break;
 				default:
 					System.out.println("잘못 입력 하셨습니다.");
@@ -68,6 +67,17 @@ public class GameMenu2 {
 				input = -1; // 반복문이 종료 되는 것을 방지
 			}
 			System.out.println();
+			
+			if(meAndTree.getTreeHeight() == 1000) {
+				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				break;
+			}
 			
 		} while (input != 0);
 		

@@ -131,7 +131,13 @@ public class Battle {
 		int healing = random.nextInt(me.getStrike() / 2) + 1;
 		int damaged = random.nextInt(enemy.getStrike()) + 1;
 		
-		me.setHp(me.getHp() + healing);
+		if(me.getHp() + healing > 100) {
+			me.setHp(100);
+		}else {
+			me.setHp(me.getHp() + healing);
+		}
+		
+		
 		me.setHp(me.getHp() - damaged);
 		
 		System.out.printf("잭은 방어를 하여 %d를 회복하였습니다.\n", healing);
