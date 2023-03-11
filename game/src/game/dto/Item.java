@@ -2,16 +2,16 @@ package game.dto;
 
 public class Item {
 
-	private String bronzeExe = "동도끼"; // 
-	private String silverExe = "은도끼";
-	private String goldExe = "금도끼";
+	private String bronzeExe = "동도끼"; // 배틀에 사용될 무기 필드값
+	private String silverExe = "은도끼"; // 배틀에 사용될 무기 필드값
+	private String goldExe = "금도끼"; // 배틀에 사용될 무기 필드값
 	
-	private String fertiliser = "비료";
-	private String potion = "포션";
-	private String bugKiller = "해충제";
-	private String scissor = "가위";
+	private String fertiliser = "비료"; // 나무 돌보기를 위한 필드값
+	private String potion = "포션";// 나무 돌보기를 위한 필드값
+	private String bugKiller = "해충제";// 나무 돌보기를 위한 필드값
+	private String scissor = "가위";// 나무 돌보기를 위한 필드값
 	
-	private int bronzeExeStriking = 10; // 동도끼 공격력
+	private int bronzeExeStriking = 10; // 동도끼 공격력 
 	private int silverExeStriking = 20; // 은도끼 공격력
 	private int goldExeStrinking = 30;  // 금도끼 공격력
 	
@@ -26,7 +26,7 @@ public class Item {
 	
 	private static int fertiliserCount = 0;    // 비료   개수
 	private static int scissorCount = 0;         // 가위   개수
-	private static int potionCount = 2;          // 포션   개수
+	private static int potionCount = 0;          // 포션   개수
 	private static int bugKillerCount = 0;       // 해충제 개수
 	//---------------------------------------------- ★ 아이템 정보
 

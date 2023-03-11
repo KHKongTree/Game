@@ -4,7 +4,7 @@ public class UserStateService extends Service{  // Service 를 상속받아 객�
 	
 	public boolean buyWeapon(String weapon, int price, int exStrike) {  // 상점(Store)에서 쓸 메서드
 
-		if (meAndTree.getGold() >= price) {
+		if (meAndTree.getGold() >= price) { 
 			meAndTree.setWeapon(weapon);
 			meAndTree.setGold(meAndTree.getGold() - price);
 			meAndTree.setStrike(exStrike);
