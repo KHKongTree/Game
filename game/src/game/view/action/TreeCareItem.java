@@ -49,7 +49,13 @@ public class TreeCareItem {
 			default:
 				System.out.println("잘못 입력 하셨습니다.");
 			}
+			
 			System.out.println();
+			
+			if(me.getTreeHeight() >= 1000) {
+				break;
+			}
+			
 		} while (input != 0);
 
 	}

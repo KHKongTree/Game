@@ -16,6 +16,7 @@ public class Store {
 		UserState me = service.getMeAndTree();
 		Item item = service.getItem();
 		System.out.println("[아이템 상점]");
+		
 
 		int input = 0;
 		do {
@@ -45,19 +46,20 @@ public class Store {
 				successBuyWeapon(item.getGoldExe(), item.getGoldExePrice(), item.getGoldExeStrinking());
 				break;
 			case 4:
-				item.setFertiliserCount(
-				item.getFertiliserCount() + successBuyItem(item.getFertiliser(), item.getFertiliserPrice(), item.getFertiliserCount()));
+				item.setFertiliserCount(item.getFertiliserCount()+ 1);
+				successBuyItem(item.getFertiliser(), item.getFertiliserPrice(), item.getFertiliserCount());
 				break;
 			case 5:
-				item.setPotionCount(item.getPotionCount() + successBuyItem(item.getPotion(), item.getPotionPrice(), item.getPotionCount()));
+				item.setPotionCount(item.getPotionCount()+1);
+				successBuyItem(item.getPotion(), item.getPotionPrice(), item.getPotionCount());
 				break;
 			case 6:
-				item.setBugKillerCount(
-				item.getBugKillerCount() + successBuyItem(item.getBugKiller(), item.getBugKillerPrice(), item.getBugKillerCount()));
+				item.setBugKillerCount(item.getBugKillerCount()+1); 
+				successBuyItem(item.getBugKiller(), item.getBugKillerPrice(), item.getBugKillerCount());
 				break;
 			case 7:
-				item.setScissorCount(
-				item.getScissorCount() + successBuyItem(item.getScissor(), item.getScissorPrice(), item.getScissorCount()));
+				item.setScissorCount(item.getScissorCount()+1);
+				successBuyItem(item.getScissor(), item.getScissorPrice(), item.getScissorCount());
 				break;
 			case 0:
 				break;

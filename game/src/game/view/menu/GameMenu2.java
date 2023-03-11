@@ -67,16 +67,11 @@ public class GameMenu2 {
 				input = -1; // 반복문이 종료 되는 것을 방지
 			}
 			System.out.println();
-			
-			if(meAndTree.getTreeHeight() == 1000) {
-				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
-				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
-				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
-				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
-				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
-				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
-				System.out.println("야호! 당신의 콩나무는 완전완전 커졌습니다.");
+				if(meAndTree.getTreeHeight() >= 1000) {
+				GameUI.ending();
+				
 				break;
+		
 			}
 			
 		} while (input != 0);

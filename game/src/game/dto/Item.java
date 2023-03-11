@@ -2,7 +2,7 @@ package game.dto;
 
 public class Item {
 
-	private String bronzeExe = "동도끼";
+	private String bronzeExe = "동도끼"; // 
 	private String silverExe = "은도끼";
 	private String goldExe = "금도끼";
 	
@@ -24,10 +24,10 @@ public class Item {
 	private int bugKillerPrice = 200;   // 해충제 가격
 	private int scissorPrice = 10;      // 가위   가격
 	
-	private int fertiliserCount = 0;    // 비료   개수
-	private int potionCount = 0;          // 포션   개수
-	private int bugKillerCount = 0;       // 해충제 개수
-	private int scissorCount = 0;         // 가위   개수
+	private static int fertiliserCount = 0;    // 비료   개수
+	private static int scissorCount = 0;         // 가위   개수
+	private static int potionCount = 2;          // 포션   개수
+	private static int bugKillerCount = 0;       // 해충제 개수
 	//---------------------------------------------- ★ 아이템 정보
 
 	public String getBronzeExe() {

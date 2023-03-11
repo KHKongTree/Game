@@ -3,12 +3,14 @@ package game.view.action;
 import java.util.Random;
 import java.util.Scanner;
 
+import game.dto.UserState;
 import game.service.TreeActionService;
 
 public class TreeCare {
 
 	Scanner sc = new Scanner(System.in);
 	Random random = new Random();
+	UserState meAndTree = new UserState();
 
 	public static TreeActionService action = new TreeActionService();
 
@@ -32,7 +34,7 @@ public class TreeCare {
 			System.out.println();
 
 			switch (input) {
-			case 1:
+			case 1: 
 				action.water();
 				break;
 			case 2:
@@ -48,6 +50,9 @@ public class TreeCare {
 				System.out.println("잘못 입력 하셨습니다.");
 			}
 			System.out.println();
+			if(meAndTree.getTreeHeight() >= 1000) {
+				break;
+			}
 		} while (input != 0);
 
 	}
