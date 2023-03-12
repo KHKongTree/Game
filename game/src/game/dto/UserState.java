@@ -1,30 +1,27 @@
 package game.dto;
 
-import java.io.Serializable;
+public class UserState {
 
-public class UserState implements Serializable {
-
-	private static String userName = "잭";
-	private static int hp = 100; // 체력
+	private String userName = "잭";
+	private int hp = 100; // 체력
 	private static int gold = 1000; // 골드
 	private static String weapon = "나뭇가지"; // 무기
 	private static int strike = 5; // 공격력
-	// 잭의 정보
+	//---------------------------------------------- ★ 잭의 정보
 
-	private static double treeHeight = 5.0; // 길이
-	private static double growthrate = 1.0; // 성장 비율
-	// 콩나무의 정보
+	private static int treeHeight = 5; // 길이
+	private double growthrate = 1.0; // 성장 비율
+	//---------------------------------------------- ★ 콩나무의 정보
 	
-
 	public UserState() {
 	}
-	
-	public static String getUserName() {
+	//---------------------------------------------- ★ UserState 클래스의 기본 생성자
+	public String getUserName() {
 		return userName;
 	}
 
-	public static void setUserName(String userName) {
-		UserState.userName = userName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public int getHp() {
@@ -32,53 +29,53 @@ public class UserState implements Serializable {
 	}
 
 	public void setHp(int hp) {
-		UserState.hp = hp;
+		this.hp = hp;
 	}
 
-	public static int getGold() {
+	public int getGold() {
 		return gold;
 	}
 
-	public static void setGold(int gold) {
-		UserState.gold = gold;
+	public void setGold(int gold) {
+		this.gold = gold;
 	}
 
-	public static String getWeapon() {
+	public String getWeapon() {
 		return weapon;
 	}
 
-	public static void setWeapon(String weapon) {
-		UserState.weapon = weapon;
+	public void setWeapon(String weapon) {
+		this.weapon = weapon;
 	}
 
-	public static int getStrike() {
+	public int getStrike() {
 		return strike;
 	}
 
-	public static void setStrike(int strike) {
-		UserState.strike = strike;
+	public void setStrike(int strike) {
+		this.strike = strike;
 	}
 
-	public static double getTreeHeight() {
+	public int getTreeHeight() {
 		return treeHeight;
 	}
 
-	public static void setTreeHeight(double treeHeight) {
-		UserState.treeHeight = treeHeight;
+	public void setTreeHeight(int treeHeight) {
+		this.treeHeight = treeHeight;
 	}
 
-	public static double getGrowthrate() {
+	public double getGrowthrate() {
 		return growthrate;
 	}
 
-	public static void setGrowthrate(double growthrate) {
-		UserState.growthrate = growthrate;
+	public void setGrowthrate(double growthrate) {
+		this.growthrate = growthrate;
 	}
-
+	//---------------------------------------------- ★ getter/setter 메서드
 	@Override
 	public String toString() {
 		return "UserState [hp=" + hp + ", gold=" + gold + ", weapon=" + weapon + ", strike=" + strike + ", treeHeight="
 				+ treeHeight + ", " + "growthrate=" + growthrate + "]";
 	}
-
+	//---------------------------------------------- ★ toString 오버라이딩
 }

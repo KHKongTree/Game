@@ -2,16 +2,16 @@ package game.dto;
 
 public class Item {
 
-	private String bronzeExe = "동도끼";
-	private String silverExe = "은도끼";
-	private String goldExe = "금도끼";
+	private String bronzeExe = "동도끼"; // 배틀에 사용될 무기 필드값
+	private String silverExe = "은도끼"; // 배틀에 사용될 무기 필드값
+	private String goldExe = "금도끼"; // 배틀에 사용될 무기 필드값
 	
-	private String fertiliser = "비료";
-	private String potion = "포션";
-	private String bugKiller = "해충제";
-	private String scissor = "가위";
+	private String fertiliser = "비료"; // 나무 돌보기를 위한 필드값
+	private String potion = "포션";// 나무 돌보기를 위한 필드값
+	private String bugKiller = "해충제";// 나무 돌보기를 위한 필드값
+	private String scissor = "가위";// 나무 돌보기를 위한 필드값
 	
-	private int bronzeExeStriking = 10; // 동도끼 공격력
+	private int bronzeExeStriking = 10; // 동도끼 공격력 
 	private int silverExeStriking = 20; // 은도끼 공격력
 	private int goldExeStrinking = 30;  // 금도끼 공격력
 	
@@ -25,10 +25,10 @@ public class Item {
 	private int scissorPrice = 10;      // 가위   가격
 	
 	private static int fertiliserCount = 0;    // 비료   개수
+	private static int scissorCount = 0;         // 가위   개수
 	private static int potionCount = 0;          // 포션   개수
 	private static int bugKillerCount = 0;       // 해충제 개수
-	private static int scissorCount = 0;         // 가위   개수
-	// 아이템 소유 갯수 정보
+	//---------------------------------------------- ★ 아이템 정보
 
 	public String getBronzeExe() {
 		return bronzeExe;
@@ -132,31 +132,31 @@ public class Item {
 	public void setScissorPrice(int scissorPrice) {
 		this.scissorPrice = scissorPrice;
 	}
-	public static int getFertiliserCount() {
+	public int getFertiliserCount() {
 		return fertiliserCount;
 	}
-	public static void setFertiliserCount(int fertiliserCount) {
-		Item.fertiliserCount = fertiliserCount;
+	public void setFertiliserCount(int fertiliserCount) {
+		this.fertiliserCount = fertiliserCount;
 	}
-	public static int getPotionCount() {
+	public int getPotionCount() {
 		return potionCount;
 	}
-	public static void setPotionCount(int potionCount) {
-		Item.potionCount = potionCount;
+	public void setPotionCount(int potionCount) {
+		this.potionCount = potionCount;
 	}
-	public static int getBugKillerCount() {
+	public int getBugKillerCount() {
 		return bugKillerCount;
 	}
-	public static void setBugKillerCount(int bugKillerCount) {
-		Item.bugKillerCount = bugKillerCount;
+	public void setBugKillerCount(int bugKillerCount) {
+		this.bugKillerCount = bugKillerCount;
 	}
-	public static int getScissorCount() {
+	public int getScissorCount() {
 		return scissorCount;
 	}
-	public static void setScissorCount(int scissorCount) {
-		Item.scissorCount = scissorCount;
+	public void setScissorCount(int scissorCount) {
+		this.scissorCount = scissorCount;
 	}
-	
+	//---------------------------------------------- ★ getter/setter 메서드
 	
 
 }

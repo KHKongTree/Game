@@ -10,9 +10,8 @@ public class TreeCare {
 
 	Scanner sc = new Scanner(System.in);
 	Random random = new Random();
+	UserState meAndTree = new UserState();
 
-	public static UserState me = new UserState();
-	public static UserState tree = new UserState();
 	public static TreeActionService action = new TreeActionService();
 
 	public static TreeCareItem useItem = new TreeCareItem();
@@ -35,7 +34,7 @@ public class TreeCare {
 			System.out.println();
 
 			switch (input) {
-			case 1:
+			case 1: 
 				action.water();
 				break;
 			case 2:
@@ -51,6 +50,9 @@ public class TreeCare {
 				System.out.println("잘못 입력 하셨습니다.");
 			}
 			System.out.println();
+			if(meAndTree.getTreeHeight() >= 1000) {
+				break;
+			}
 		} while (input != 0);
 
 	}

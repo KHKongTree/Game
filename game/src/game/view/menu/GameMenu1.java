@@ -17,7 +17,6 @@ public class GameMenu1 {
 		int input = -1;
 		do {
 			try {
-				GameUI.clearConsoleE();
 				GameUI.gameMenu1();
 				
 				input = sc.nextInt();

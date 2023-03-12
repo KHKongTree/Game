@@ -4,22 +4,24 @@ import java.util.Scanner;
 
 import game.dto.Item;
 import game.dto.UserState;
+import game.service.Service;
 import game.service.UserStateService;
 
 public class Store {
-
+	UserStateService us = new UserStateService();  			// 유저상태 서비스(buyWeapon, buyItem)를 가져오기 위한 객체 us
+	Scanner sc = new Scanner(System.in);
+	
 	public void menu() {
-
-		Scanner sc = new Scanner(System.in);
-		UserState me = new UserState();
-		Item item = new Item();
-
+		Service service = new Service(); 					// 서비스 클래스에 있는 객체를 가져오기 위함
+		UserState me = service.getMeAndTree();
+		Item item = service.getItem();
 		System.out.println("[아이템 상점]");
+		
 
 		int input = 0;
 		do {
 			System.out.println();
-			System.out.println("내가 가지고 있는 골드 : " + UserState.getGold());
+			System.out.println("내가 가지고 있는 골드 : " + me.getGold());
 
 			System.out.println("1. 동도끼 (100G)");
 			System.out.println("2. 은도끼 (200G)");
@@ -44,19 +46,20 @@ public class Store {
 				successBuyWeapon(item.getGoldExe(), item.getGoldExePrice(), item.getGoldExeStrinking());
 				break;
 			case 4:
-				Item.setFertiliserCount(
-						Item.getFertiliserCount() + successBuyItem(item.getFertiliser(), item.getFertiliserPrice()));
+				item.setFertiliserCount(item.getFertiliserCount()+ 1);
+				successBuyItem(item.getFertiliser(), item.getFertiliserPrice(), item.getFertiliserCount());
 				break;
 			case 5:
-				Item.setPotionCount(Item.getPotionCount() + successBuyItem(item.getPotion(), item.getPotionPrice()));
+				item.setPotionCount(item.getPotionCount()+1);
+				successBuyItem(item.getPotion(), item.getPotionPrice(), item.getPotionCount());
 				break;
 			case 6:
-				Item.setBugKillerCount(
-						Item.getBugKillerCount() + successBuyItem(item.getBugKiller(), item.getPotionPrice()));
+				item.setBugKillerCount(item.getBugKillerCount()+1); 
+				successBuyItem(item.getBugKiller(), item.getBugKillerPrice(), item.getBugKillerCount());
 				break;
 			case 7:
-				Item.setScissorCount(
-						Item.getScissorCount() + successBuyItem(item.getScissor(), item.getScissorPrice()));
+				item.setScissorCount(item.getScissorCount()+1);
+				successBuyItem(item.getScissor(), item.getScissorPrice(), item.getScissorCount());
 				break;
 			case 0:
 				break;
@@ -68,17 +71,17 @@ public class Store {
 
 	private void successBuyWeapon(String item, int price, int exStrike) {
 
-		if (UserStateService.buyWeapon(item, price, exStrike)) {
+		if (us.buyWeapon(item, price, exStrike)) {
 			System.out.printf("%s를 획득했습니다.\n", item);
 		} else {
 			System.out.println("소지한 골드가 부족합니다.\n");
 		}
 	}
 
-	private int successBuyItem(String item, int price) {
+	private int successBuyItem(String item, int price, int count) {
 
-		if (UserStateService.buyItem(price)) {
-			System.out.printf("%s를 획득했습니다.\n", item);
+		if (us.buyItem(price)) {
+			System.out.printf("%s를 획득했습니다 총 개수는 %d개 입니다..\n", item,count);
 			return 1;
 		} else {
 			System.out.println("소지한 골드가 부족합니다.\n");

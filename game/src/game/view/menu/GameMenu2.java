@@ -3,22 +3,27 @@ package game.view.menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import game.view.action.TreeCare;
+import game.dto.Item;
 import game.dto.UserState;
 import game.image.GameUI;
+import game.service.Service;
 import game.view.action.Battle;
 import game.view.action.Display;
 import game.view.action.Store;
+import game.view.action.TreeCare;
 
 public class GameMenu2 {
 
+	Service service = new Service();
 	Scanner sc = new Scanner(System.in);
-	UserState me = new UserState();
-	TreeCare care = new TreeCare();
+	UserState meAndTree = service.getMeAndTree();
+	Item item = service.getItem();
+	TreeCare care = service.getCare();
 	Battle battle = new Battle();
 	Store store = new Store();
 	Display info = new Display();
-	GameUI ui = new GameUI();
+	GameUI ui = service.getUi();
+	
 	
 	public void menu() {
 		
@@ -52,7 +57,6 @@ public class GameMenu2 {
 					info.display();
 					break;
 				case 0:
-					System.out.println("프로그램을 종료합니다.");
 					break;
 				default:
 					System.out.println("잘못 입력 하셨습니다.");
@@ -63,6 +67,12 @@ public class GameMenu2 {
 				input = -1; // 반복문이 종료 되는 것을 방지
 			}
 			System.out.println();
+				if(meAndTree.getTreeHeight() >= 1000) {
+				GameUI.ending();
+				
+				break;
+		
+			}
 			
 		} while (input != 0);
 		
