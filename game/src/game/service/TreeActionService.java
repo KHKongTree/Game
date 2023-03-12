@@ -21,6 +21,7 @@ public class TreeActionService extends Service { // Service 를 상속받아 객
 			System.out.println("지저분한 가지를 정리했습니다!!*^v^*");
 		} else {
 			System.out.println("어? 가위가 없네? 가위 사줘!");
+			System.out.println("================================");
 		}
 
 	}
