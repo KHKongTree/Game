@@ -28,13 +28,16 @@ public class Store {
 			System.out.println("3. 금도끼 (300G)");
 			System.out.println("4. 비료 (50G)");
 			System.out.println("5. 물약 (100G)");
-			System.out.println("6. 해충제 (80G)");
-			System.out.println("7. 가위 (20G)");
+			System.out.println("6. 해충제 (200G)");
+			System.out.println("7. 가위 (10G)");
 			System.out.println("0. 상점 나가기");
-
+			System.out.println();
+			
 			System.out.print("메뉴 선택 : ");
 			input = sc.nextInt();
-
+			System.out.println("================================");
+			System.out.println();
+			
 			switch (input) {
 			case 1:
 				successBuyWeapon(item.getBronzeExe(), item.getBronzeExePrice(), item.getBronzeExeStriking());
@@ -73,8 +76,10 @@ public class Store {
 
 		if (us.buyWeapon(item, price, exStrike)) {
 			System.out.printf("%s를 획득했습니다.\n", item);
+			System.out.println("================================");
 		} else {
 			System.out.println("소지한 골드가 부족합니다.\n");
+			System.out.println("================================");
 		}
 	}
 
@@ -82,9 +87,11 @@ public class Store {
 
 		if (us.buyItem(price)) {
 			System.out.printf("%s를 획득했습니다 총 개수는 %d개 입니다..\n", item,count);
+			System.out.println("================================");
 			return 1;
 		} else {
 			System.out.println("소지한 골드가 부족합니다.\n");
+			System.out.println("================================");
 			return 0;
 		}
 	}

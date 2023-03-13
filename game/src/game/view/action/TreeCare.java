@@ -27,10 +27,10 @@ public class TreeCare {
 			System.out.println("0. 나가기");
 
 			System.out.println();
-
+			System.out.println("================================");
 			System.out.print("돌보기 메뉴를 선택해주세요. : ");
 			input = sc.nextInt();
-
+			System.out.println("================================");
 			System.out.println();
 
 			switch (input) {
@@ -45,6 +45,7 @@ public class TreeCare {
 				break;
 			case 0:
 				System.out.println("나무 돌보기를 나갑니다.");
+				System.out.println("================================");
 				break;
 			default:
 				System.out.println("잘못 입력 하셨습니다.");
