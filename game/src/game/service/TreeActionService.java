@@ -11,7 +11,8 @@ public class TreeActionService extends Service { // Service 를 상속받아 객
 		System.out.println("================================");
 		System.out.println("2L를 주었습니다.");
 		System.out.println("♣20m가 자랐습니다!♣");
-		System.out.printf("잭! 내 키가 %dm 자라서 %dm가 됐어!", meAndTree.getTreeHeight(), meAndTree.getTreeHeight());
+		System.out.printf("잭! 내 키가 %dm 자라서 %dm가 됐어!\n", meAndTree.getTreeHeight(), meAndTree.getTreeHeight());
+		System.out.println("================================");
 	}
 
 	public void branchCut() { // 나무돌보기(TreeCare)에서 쓸 메서드
@@ -19,6 +20,7 @@ public class TreeActionService extends Service { // Service 를 상속받아 객
 			item.setScissorCount(item.getScissorCount() - 1); // 가위를 사용했을 때
 			meAndTree.setGrowthrate(1.0); // 나무 비율 초기화-
 			System.out.println("지저분한 가지를 정리했습니다!!*^v^*");
+			System.out.println("================================");
 		} else {
 			System.out.println("어? 가위가 없네? 가위 사줘!");
 			System.out.println("================================");
@@ -38,9 +40,11 @@ public class TreeActionService extends Service { // Service 를 상속받아 객
 			} else if (meAndTree.getGrowthrate() <= 0.4) {
 				System.out.println("가지가 너무 많아! 가지치기를 먼저 해줘!");
 			}
-			System.out.printf("잭! 내 키가 10m 자라서 %fm가 됐어! ", meAndTree.getTreeHeight());
+			System.out.printf("잭! 내 키가 10m 자라서 %dm가 됐어! \n", meAndTree.getTreeHeight());
+			System.out.println("================================");
 		} else {
 			System.out.println("비료 어딨어? 비료 사야지!");
+			System.out.println("================================");
 		}
 
 	}
@@ -57,9 +61,11 @@ public class TreeActionService extends Service { // Service 를 상속받아 객
 			} else if (meAndTree.getGrowthrate() <= 0.4) {
 				System.out.println("가지가 너무 많아! 가지치기를 먼저 해줘!");
 			}
-			System.out.printf("잭! 내 키가 50m 자라서 %dm가 됐어! ", meAndTree.getTreeHeight());
+			System.out.printf("잭! 내 키가 50m 자라서 %dm가 됐어! \n", meAndTree.getTreeHeight());
+			System.out.println("================================");
 		} else {
 			System.out.println("물약이 있으면 빨리 자랄텐데.. 물약을 사러 가볼까?");
+			System.out.println("================================");
 		}
 
 	}
@@ -76,9 +82,11 @@ public class TreeActionService extends Service { // Service 를 상속받아 객
 			} else if (meAndTree.getGrowthrate() <= 0.4) {
 				System.out.println("가지가 너무 많아! 가지치기를 먼저 해줘!");
 			}
-			System.out.printf("잭! 내 키가 30m 자라서 %fm가 됐어! ", meAndTree.getTreeHeight());
+			System.out.printf("잭! 내 키가 30m 자라서 %dm가 됐어! \n", meAndTree.getTreeHeight());
+			System.out.println("================================");
 		} else {
 			System.out.println("으악! 벌레가 너무 많아! 해충제가 필요할거같아 상점으로 가자!");
+			System.out.println("================================");
 		}
 	}
 
