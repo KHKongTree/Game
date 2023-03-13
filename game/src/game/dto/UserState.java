@@ -4,7 +4,7 @@ public class UserState {
 
 	private String userName = "잭";
 	private int hp = 100; // 체력
-	private static int gold = 1000; // 골드
+	private static int gold = 100; // 골드
 	private static String weapon = "나뭇가지"; // 무기
 	private static int strike = 5; // 공격력
 	//---------------------------------------------- ★ 잭의 정보
